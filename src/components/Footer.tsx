@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MapPin, Phone, Mail, MessageCircle, Instagram, Facebook, Youtube, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, MessageCircle, Instagram, Facebook, Youtube, Clock,  } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="text-center">
             <h3 className="text-primary font-bold text-lg mb-2">Women's Exclusive Training Sessions</h3>
             <p className="text-sm text-muted-foreground">
-              Dedicated women's hours with female trainer V.Ajitha | Monday-Saturday 10:00 AM - 4:00 PM
+              Dedicated women's hours with female trainer V.Ajitha | Monday-Saturday 9:30 AM - 4:30 PM
             </p>
           </div>
         </div>
@@ -36,6 +36,9 @@ export default function Footer() {
               </a>
               <a href="#" className="hover:text-primary transition-colors">
                 <Youtube className="h-5 w-5" />
+              </a>
+              <a href="https://wa.me/918807779835" target="_blank" className="hover:text-primary transition-colors">
+                <MessageCircle className="h-5 w-5" />
               </a>
             </div>
           </div>
@@ -104,15 +107,11 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-primary flex-shrink-0" />
-                <span className="opacity-80">+91 880779835</span>
+                <span className="opacity-80">+91 8807779835</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-primary flex-shrink-0" />
                 <span className="opacity-80">nvijayakumar110@gmail.com</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <MessageCircle className="h-4 w-4 text-primary flex-shrink-0" />
-                <span className="opacity-80">WhatsApp Chat</span>
               </div>
             </div>
           </div>
@@ -128,21 +127,17 @@ export default function Footer() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center text-sm">
             <div>
-              <p className="font-semibold mb-1">Monday - Saturday</p>
-              <p className="opacity-80">Morning (Unisex): 5:00 AM - 10:00 AM</p>
+              <p className="font-semibold mb-1">Monday - Sunday</p>
+              <p className="opacity-80">Morning (Unisex): 5:00 AM - 9:30 AM</p>
             </div>
             <div>
-              <p className="font-semibold mb-1">Monday - Saturday</p>
-              <p className="opacity-80">Women's Exclusive: 10:00 AM - 4:00 PM</p>
+              <p className="font-semibold mb-1">Monday - Sunday</p>
+              <p className="opacity-80">Women's Exclusive: 9:30 AM - 4:30 PM</p>
             </div>
             <div>
-              <p className="font-semibold mb-1">Monday - Saturday</p>
-              <p className="opacity-80">Evening (Unisex): 4:00 PM - 9:00 PM</p>
+              <p className="font-semibold mb-1">Monday - Sunday</p>
+              <p className="opacity-80">Evening (Unisex): 4:30 PM - 9:30 PM</p>
             </div>
-          </div>
-          <div className="text-center mt-4">
-            <p className="font-semibold text-sm">Sunday</p>
-            <p className="text-sm opacity-80">Common Timing (Unisex): 6:00 AM - 10:00 AM</p>
           </div>
         </div>
       </div>
@@ -151,7 +146,7 @@ export default function Footer() {
       <div className="border-t border-border/20 py-4">
         <div className="container mx-auto px-4 text-center">
           <p className="text-sm opacity-80">
-            © 2024 MR Real StrongMan Fitness And Unisex Gym. All rights reserved.
+            © 2019 MR Real StrongMan Fitness And Unisex Gym. All rights reserved.
           </p>
         </div>
       </div>

@@ -13,7 +13,7 @@ export default function Navigation() {
     { href: "/about", label: "About" },
     { href: "/trainers", label: "Trainers" },
     { href: "/membership", label: "Membership" },
-    { href: "/schedule", label: "Schedule" },
+    { href: "/timings", label: "Timings" },
     { href: "/gallery", label: "Gallery" },
     { href: "/contacts", label: "Contact" }
   ];
@@ -43,12 +43,6 @@ export default function Navigation() {
 
           {/* Action Buttons */}
           <div className="hidden md:flex items-center gap-3">
-            <Button variant="ghost" size="icon">
-              <Phone className="h-5 w-5" />
-            </Button>
-            <Button variant="ghost" size="icon">
-              <Bell className="h-5 w-5" />
-            </Button>
             <Button className="bg-primary hover:bg-primary/90">
               Join Now
             </Button>

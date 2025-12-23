@@ -8,85 +8,19 @@ import { Calendar, Clock } from "lucide-react";
 export default function Schedule() {
   const scheduleLeft = [
     {
-      day: "Monday",
-      program: "Strength Training",
-      trainer: "Trainer: V.Ajitha",
-      times: "10:00 AM - 4:00 PM"
+      day: "Mornings",
+      times: "5:00 AM - 9:30 AM "
     },
     {
-      day: "Tuesday",
-      program: "Cardio & HIIT",
-      times: "5:00 AM - 10:00 AM & 4:00 PM - 9:00 PM"
-    },
-    {
-      day: "Wednesday",
-      program: "Powerlifting",
-      times: "5:00 AM - 10:00 AM & 4:00 PM - 9:00 PM"
-    },
-    {
-      day: "Thursday",
-      program: "Functional Training",
-      times: "5:00 AM - 10:00 AM & 4:00 PM - 9:00 PM"
-    },
-    {
-      day: "Friday",
-      program: "Bodybuilding",
-      times: "5:00 AM - 10:00 AM & 4:00 PM - 9:00 PM"
-    },
-    {
-      day: "Saturday",
-      program: "Open Training",
-      times: "5:00 AM - 10:00 AM & 4:00 PM - 9:00 PM"
-    },
-    {
-      day: "Sunday",
-      program: "Recovery & Stretch",
-      times: "6:00 AM - 10:00 AM"
+      day: "Evenings",
+      times: "4:30 PM - 9:30 PM"
     }
   ];
 
   const scheduleRight = [
     {
-      day: "Monday",
-      program: "Strength & Toning",
-      trainer: "Trainer: V.Ajitha",
-      times: "10:00 AM - 4:00 PM"
-    },
-    {
-      day: "Tuesday",
-      program: "Cardio Dance",
-      trainer: "Trainer: V.Ajitha",
-      times: "10:00 AM - 4:00 PM"
-    },
-    {
-      day: "Wednesday",
-      program: "Pilates & Core",
-      trainer: "Trainer: V.Ajitha",
-      times: "10:00 AM - 4:00 PM"
-    },
-    {
-      day: "Thursday",
-      program: "Weight Training",
-      trainer: "Trainer: V.Ajitha",
-      times: "10:00 AM - 4:00 PM"
-    },
-    {
-      day: "Friday",
-      program: "Full Body Workout",
-      trainer: "Trainer: V.Ajitha",
-      times: "10:00 AM - 4:00 PM"
-    },
-    {
-      day: "Saturday",
-      program: "Yoga & Wellness",
-      trainer: "Trainer: V.Ajitha",
-      times: "10:00 AM - 4:00 PM"
-    },
-    {
-      day: "Sunday",
-      program: "Rest Day",
-      trainer: "Trainer: V.Ajitha",
-      times: "Closed"
+      day: "All Days",
+      times: "9:30 AM - 4:30 PM"
     }
   ];
 
@@ -100,7 +34,7 @@ export default function Schedule() {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                Weekly Schedule
+                Gym Timings
               </h1>
               <p className="text-lg text-muted-foreground">
                 Plan your week with our comprehensive training schedule
@@ -116,7 +50,7 @@ export default function Schedule() {
               {/* Left Schedule - General */}
               <Card className="border-2">
                 <CardContent className="p-6">
-                  <h2 className="text-2xl font-bold mb-6">General Training</h2>
+                  <h2 className="text-2xl font-bold mb-6">Gents</h2>
                   <div className="space-y-4">
                     {scheduleLeft.map((item, index) => (
                       <div key={index} className="border rounded-lg p-4 hover:shadow-md transition-shadow">
@@ -124,10 +58,6 @@ export default function Schedule() {
                           <Calendar className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                           <div className="flex-1">
                             <h3 className="font-bold text-lg mb-1">{item.day}</h3>
-                            <p className="text-primary font-semibold mb-2">{item.program}</p>
-                            {item.trainer && (
-                              <p className="text-sm text-muted-foreground mb-2">{item.trainer}</p>
-                            )}
                             <div className="flex items-center gap-2 text-sm text-muted-foreground">
                               <Clock className="h-4 w-4" />
                               <span>{item.times}</span>
@@ -153,8 +83,6 @@ export default function Schedule() {
                           <Calendar className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                           <div className="flex-1">
                             <h3 className="font-bold text-lg mb-1">{item.day}</h3>
-                            <p className="text-primary font-semibold mb-2">{item.program}</p>
-                            <p className="text-sm text-muted-foreground mb-2">{item.trainer}</p>
                             <div className="flex items-center gap-2 text-sm text-muted-foreground">
                               <Clock className="h-4 w-4" />
                               <span>{item.times}</span>

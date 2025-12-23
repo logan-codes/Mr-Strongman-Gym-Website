@@ -53,15 +53,6 @@ export default function Membership() {
     }
   ];
 
-  const benefits = [
-    "Access to all gym equipment and facilities",
-    "Women's exclusive training sessions",
-    "Experienced certified trainers",
-    "Flexible morning and evening hours",
-    "Clean and well-maintained facilities",
-    "Community support and motivation"
-  ];
-
   return (
     <>
       <Navigation />
@@ -130,15 +121,10 @@ export default function Membership() {
         <section className="py-16 bg-muted/30">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold mb-8 text-center">All Memberships Include</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {benefits.map((benefit, index) => (
-                  <div key={index} className="flex items-start gap-3 p-4 bg-background rounded-lg border">
-                    <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span>{benefit}</span>
-                  </div>
-                ))}
-              </div>
+              <h2 className="text-3xl font-bold mb-8 text-center">Admission fees</h2>
+              <div className="text-3xl font-bold mb-8 text-center">
+                <span className="text-5xl font-bold text-primary">₹299/-</span>
+              </div>                
             </div>
           </div>
         </section>

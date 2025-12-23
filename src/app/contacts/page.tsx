@@ -8,6 +8,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, MessageCircle, Clock } from "lucide-react";
 
+const openWhatsApp = () => {
+    window.open(`https://wa.me/918807779835`, "_blank");
+  };
+
 export default function Contact() {
   return (
     <>
@@ -33,7 +37,7 @@ export default function Contact() {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
               {/* Contact Form */}
-              <Card className="border-2">
+              {/* <Card className="border-2">
                 <CardHeader>
                   <CardTitle className="text-2xl">Send us a Message</CardTitle>
                 </CardHeader>
@@ -61,7 +65,8 @@ export default function Contact() {
                     Send Message
                   </Button>
                 </CardContent>
-              </Card>
+              </Card> */}
+              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfbxSFtrQZKp3Q8t0cPF2Jy1ivSBCkBSGHnxlf1VZHL9l5Dmg/viewform?usp=dialog" width="100%" height="500"></iframe>
 
               {/* Contact Information */}
               <div className="space-y-6">
@@ -86,8 +91,7 @@ export default function Contact() {
                       <div>
                         <h3 className="font-bold mb-1">Phone</h3>
                         <p className="text-sm text-muted-foreground">
-                          +91 880779835<br />
-                          +91 93454 67030, +91 99445 11816
+                          +91 8807779835
                         </p>
                       </div>
                     </div>
@@ -98,16 +102,6 @@ export default function Contact() {
                         <h3 className="font-bold mb-1">Email</h3>
                         <p className="text-sm text-muted-foreground">
                           nvijayakumar110@gmail.com
-                        </p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start gap-3">
-                      <MessageCircle className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                      <div>
-                        <h3 className="font-bold mb-1">WhatsApp</h3>
-                        <p className="text-sm text-muted-foreground">
-                          +91 880779835
                         </p>
                       </div>
                     </div>
@@ -123,20 +117,15 @@ export default function Contact() {
                       <Clock className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                       <div className="flex-1">
                         <div className="flex justify-between mb-2">
-                          <span className="font-semibold">Monday - Saturday</span>
-                          <span className="text-sm text-muted-foreground">5:00 AM - 10:00 AM (Unisex)</span>
+                          <span className="font-semibold">All days</span>
                         </div>
                         <div className="flex justify-between mb-2">
-                          <span className="font-semibold">Monday - Saturday</span>
-                          <span className="text-sm text-muted-foreground">10:00 AM - 4:00 PM (Women's Exclusive)</span>
+                          <span className="font-semibold">Gents</span>
+                          <span className="text-sm text-muted-foreground">5:00 AM - 9:30 AM  & 4:30 PM - 9:30 PM</span>
                         </div>
                         <div className="flex justify-between mb-2">
-                          <span className="font-semibold">Monday - Saturday</span>
-                          <span className="text-sm text-muted-foreground">4:00 PM - 9:00 PM (Unisex)</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="font-semibold">Sunday</span>
-                          <span className="text-sm text-muted-foreground">6:00 AM - 10:00 AM (Unisex)</span>
+                          <span className="font-semibold">Ladies Exclusive</span>
+                          <span className="text-sm text-muted-foreground">9:30 AM - 4:30 PM</span>
                         </div>
                       </div>
                     </div>
