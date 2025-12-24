@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="text-center">
             <h3 className="text-primary font-bold text-lg mb-2">Women's Exclusive Training Sessions</h3>
             <p className="text-sm text-muted-foreground">
-              Dedicated women's hours with female trainer V.Ajitha | Monday-Saturday 9:30 AM - 4:30 PM
+              Dedicated women's hours with female trainer V.Ajitha | Monday-Saturday 10:00 AM - 4:00 PM
             </p>
           </div>
         </div>
@@ -127,16 +127,20 @@ export default function Footer() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center text-sm">
             <div>
-              <p className="font-semibold mb-1">Monday - Sunday</p>
-              <p className="opacity-80">Morning (Unisex): 5:00 AM - 9:30 AM</p>
+              <p className="font-semibold mb-1">Monday - Saturday</p>
+              <p className="opacity-80">Morning (Unisex): 5:00 AM - 10:00 AM</p>
             </div>
             <div>
-              <p className="font-semibold mb-1">Monday - Sunday</p>
-              <p className="opacity-80">Women's Exclusive: 9:30 AM - 4:30 PM</p>
+              <p className="font-semibold mb-1">Monday - Saturday</p>
+              <p className="opacity-80">Women's Exclusive: 10:00 AM - 4:00 PM</p>
             </div>
             <div>
               <p className="font-semibold mb-1">Monday - Sunday</p>
               <p className="opacity-80">Evening (Unisex): 4:30 PM - 9:30 PM</p>
+            </div>
+            <div className="md:col-span-3">
+              <p className="font-semibold mb-1">Sunday (Unisex)</p>
+              <p className="opacity-80"> 6:00 PM - 10:00 AM</p>
             </div>
           </div>
         </div>

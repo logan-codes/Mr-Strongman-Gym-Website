@@ -8,19 +8,23 @@ import { Calendar, Clock } from "lucide-react";
 export default function Schedule() {
   const scheduleLeft = [
     {
-      day: "Mornings",
-      times: "5:00 AM - 9:30 AM "
+      day: "Monday to Saturday (Mornings)",
+      times: "5:00 AM - 10:00 AM "
     },
     {
-      day: "Evenings",
+      day: "Monday to Saturday (Evenings)",
       times: "4:30 PM - 9:30 PM"
+    },
+    {
+      day: "Sunday",
+      times: "6:00 AM - 10:00 AM"
     }
   ];
 
   const scheduleRight = [
     {
-      day: "All Days",
-      times: "9:30 AM - 4:30 PM"
+      day: "Monday to Saturday",
+      times: "10:00 AM - 4:00 PM"
     }
   ];
 
@@ -50,7 +54,7 @@ export default function Schedule() {
               {/* Left Schedule - General */}
               <Card className="border-2">
                 <CardContent className="p-6">
-                  <h2 className="text-2xl font-bold mb-6">Gents</h2>
+                  <h2 className="text-2xl font-bold mb-6">Unisex</h2>
                   <div className="space-y-4">
                     {scheduleLeft.map((item, index) => (
                       <div key={index} className="border rounded-lg p-4 hover:shadow-md transition-shadow">

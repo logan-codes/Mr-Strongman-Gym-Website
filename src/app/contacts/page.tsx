@@ -117,15 +117,25 @@ export default function Contact() {
                       <Clock className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                       <div className="flex-1">
                         <div className="flex justify-between mb-2">
-                          <span className="font-semibold">All days</span>
+                          <span className="font-semibold">Monday to Saturday</span>
                         </div>
                         <div className="flex justify-between mb-2">
-                          <span className="font-semibold">Gents</span>
-                          <span className="text-sm text-muted-foreground">5:00 AM - 9:30 AM  & 4:30 PM - 9:30 PM</span>
+                          <span className="font-semibold">Unisex</span>
+                          <span className="text-sm text-muted-foreground">5:00 AM - 10:00 AM <br></br> 4:30 PM - 9:30 PM</span>
                         </div>
                         <div className="flex justify-between mb-2">
                           <span className="font-semibold">Ladies Exclusive</span>
-                          <span className="text-sm text-muted-foreground">9:30 AM - 4:30 PM</span>
+                          <span className="text-sm text-muted-foreground">10:00 AM - 4:00 PM </span>
+                        </div>
+                      </div>
+                      <Clock className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <div className="flex-1">
+                        <div className="flex justify-between mb-2">
+                          <span className="font-semibold">Sunday</span>
+                        </div>
+                        <div className="flex justify-between mb-2">
+                          <span className="font-semibold">Unisex</span>
+                          <span className="text-sm text-muted-foreground">6:00 AM - 10:00 AM</span>
                         </div>
                       </div>
                     </div>
