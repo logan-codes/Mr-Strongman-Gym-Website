@@ -111,6 +111,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {features.map((feature, index) => (
                 <motion.div
+                  key={index}
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -120,10 +121,7 @@ export default function Home() {
                     delay: index * 0.2,
                   }}
                 >
-                  <Card
-                    key={index}
-                    className="border-2 hover:shadow-lg transition-shadow"
-                  >
+                  <Card className="border-2 hover:shadow-lg transition-shadow">
                     <CardContent className="p-6 text-center">
                       <feature.icon className="h-12 w-12 text-primary mx-auto mb-4" />
                       <h3 className="text-xl font-bold mb-2">

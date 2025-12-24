@@ -84,6 +84,7 @@ export default function Trainers() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
               {trainers.map((trainer, index) => (
                 <motion.div
+                  key={index}
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -93,10 +94,7 @@ export default function Trainers() {
                     delay: index * 0.2,
                   }}
                 >
-                  <Card
-                    key={index}
-                    className="overflow-hidden border-2 hover:shadow-xl transition-all"
-                  >
+                  <Card className="overflow-hidden border-2 hover:shadow-xl transition-all">
                     <div className="relative h-64 overflow-hidden">
                       <div
                         className="absolute inset-0 bg-cover bg-center"

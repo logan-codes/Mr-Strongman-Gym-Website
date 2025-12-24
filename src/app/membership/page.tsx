@@ -89,6 +89,7 @@ export default function Membership() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
               {plans.map((plan, index) => (
                 <motion.div
+                  key={index}
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -99,7 +100,6 @@ export default function Membership() {
                   }}
                 >
                   <Card
-                    key={index}
                     className={`border-2 relative ${plan.popular ? "border-primary shadow-2xl scale-105" : ""}`}
                   >
                     {plan.popular && (

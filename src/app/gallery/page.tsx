@@ -45,6 +45,7 @@ export default function Gallery() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {images.map((image, imgIndex) => (
                   <motion.div
+                    key={imgIndex}
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -54,10 +55,7 @@ export default function Gallery() {
                       delay: imgIndex * 0.2,
                     }}
                   >
-                    <Card
-                      key={imgIndex}
-                      className="overflow-hidden border-2 hover:shadow-xl transition-shadow group cursor-pointer"
-                    >
+                    <Card className="overflow-hidden border-2 hover:shadow-xl transition-shadow group cursor-pointer">
                       <div className="relative h-64 overflow-hidden">
                         <div
                           className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
