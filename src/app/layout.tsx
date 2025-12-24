@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "APEX GYM - Transform Your Body, Elevate Your Mind",
+  title: "MR Real StrongMan - Fitness & Unisex Gym",
   description: "Join the strongest fitness community in town. Premium gym facilities, expert trainers, and diverse classes for all fitness levels.",
 };
 
