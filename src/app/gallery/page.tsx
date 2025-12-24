@@ -8,13 +8,13 @@ import { Badge } from "@/components/ui/badge";
 export default function Gallery() {
   const images = [
     "images/gym1.jpg",
-    "../images/gym2.jpg",
-    "../images/gym3.jpg",
-    "../images/gym4.jpg",
-    "../images/desk1.jpg",
-    "../images/equip1.jpg",
-    "../images/equip2.jpg",
-    "../images/banner1.jpg",
+    "images/gym2.jpg",
+    "images/gym3.jpg",
+    "images/gym4.jpg",
+    "images/desk1.jpg",
+    "images/equip1.jpg",
+    "images/equip2.jpg",
+    "images/banner1.jpg",
   ];
 
   return (
