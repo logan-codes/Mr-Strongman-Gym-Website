@@ -27,7 +27,7 @@ export default function Navigation() {
           <Link href="/" className="flex flex-col">
           <div className="flex items-center gap-2">
             <Image
-              src="/logo/Logo.png"
+              src="logo/Logo.png"
               alt="MR Real StrongMan Logo"
               width={90}
               height={70}
