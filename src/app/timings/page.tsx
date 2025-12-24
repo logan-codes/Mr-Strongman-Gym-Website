@@ -4,38 +4,44 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Calendar, Clock } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Schedule() {
   const scheduleLeft = [
     {
       day: "Monday to Saturday (Mornings)",
-      times: "5:00 AM - 10:00 AM "
+      times: "5:00 AM - 10:00 AM ",
     },
     {
       day: "Monday to Saturday (Evenings)",
-      times: "4:30 PM - 9:30 PM"
+      times: "4:30 PM - 9:30 PM",
     },
     {
       day: "Sunday",
-      times: "6:00 AM - 10:00 AM"
-    }
+      times: "6:00 AM - 10:00 AM",
+    },
   ];
 
   const scheduleRight = [
     {
       day: "Monday to Saturday",
-      times: "10:00 AM - 4:00 PM"
-    }
+      times: "10:00 AM - 4:00 PM",
+    },
   ];
 
   return (
     <>
       <Navigation />
-      
+
       <main className="pt-16 min-h-screen bg-muted/30">
         {/* Hero Section */}
         <section className="py-16 bg-background">
-          <div className="container mx-auto px-4">
+          <motion.div
+            className="container mx-auto px-4"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-4">
                 Gym Timings
@@ -44,7 +50,7 @@ export default function Schedule() {
                 Plan your week with our comprehensive training schedule
               </p>
             </div>
-          </div>
+          </motion.div>
         </section>
 
         {/* Schedule Grid */}
@@ -57,18 +63,31 @@ export default function Schedule() {
                   <h2 className="text-2xl font-bold mb-6">Unisex</h2>
                   <div className="space-y-4">
                     {scheduleLeft.map((item, index) => (
-                      <div key={index} className="border rounded-lg p-4 hover:shadow-md transition-shadow">
+                      <motion.div
+                        key={index}
+                        className="border rounded-lg p-4 hover:shadow-md transition-shadow"
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{
+                          duration: 0.6,
+                          ease: "easeOut",
+                          delay: index * 0.2,
+                        }}
+                      >
                         <div className="flex items-start gap-3">
                           <Calendar className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                           <div className="flex-1">
-                            <h3 className="font-bold text-lg mb-1">{item.day}</h3>
+                            <h3 className="font-bold text-lg mb-1">
+                              {item.day}
+                            </h3>
                             <div className="flex items-center gap-2 text-sm text-muted-foreground">
                               <Clock className="h-4 w-4" />
                               <span>{item.times}</span>
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </motion.div>
                     ))}
                   </div>
                 </CardContent>
@@ -82,18 +101,31 @@ export default function Schedule() {
                   </div>
                   <div className="space-y-4">
                     {scheduleRight.map((item, index) => (
-                      <div key={index} className="border rounded-lg p-4 hover:shadow-md transition-shadow">
+                      <motion.div
+                        key={index}
+                        className="border rounded-lg p-4 hover:shadow-md transition-shadow"
+                        initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.6,
+                    ease: "easeOut",
+                    delay: index * 0.2,
+                  }}
+                      >
                         <div className="flex items-start gap-3">
                           <Calendar className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                           <div className="flex-1">
-                            <h3 className="font-bold text-lg mb-1">{item.day}</h3>
+                            <h3 className="font-bold text-lg mb-1">
+                              {item.day}
+                            </h3>
                             <div className="flex items-center gap-2 text-sm text-muted-foreground">
                               <Clock className="h-4 w-4" />
                               <span>{item.times}</span>
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </motion.div>
                     ))}
                   </div>
                 </CardContent>

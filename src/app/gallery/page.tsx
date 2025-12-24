@@ -4,6 +4,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { motion } from "framer-motion";
 
 export default function Gallery() {
   const images = [
@@ -43,17 +44,28 @@ export default function Gallery() {
             <div className="space-y-16 max-w-7xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {images.map((image, imgIndex) => (
-                  <Card
-                    key={imgIndex}
-                    className="overflow-hidden border-2 hover:shadow-xl transition-shadow group cursor-pointer"
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.6,
+                      ease: "easeOut",
+                      delay: imgIndex * 0.2,
+                    }}
                   >
-                    <div className="relative h-64 overflow-hidden">
-                      <div
-                        className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
-                        style={{ backgroundImage: `url('${image}')` }}
-                      />
-                    </div>
-                  </Card>
+                    <Card
+                      key={imgIndex}
+                      className="overflow-hidden border-2 hover:shadow-xl transition-shadow group cursor-pointer"
+                    >
+                      <div className="relative h-64 overflow-hidden">
+                        <div
+                          className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
+                          style={{ backgroundImage: `url('${image}')` }}
+                        />
+                      </div>
+                    </Card>
+                  </motion.div>
                 ))}
               </div>
             </div>
