@@ -5,52 +5,55 @@ import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Check, Star } from "lucide-react";
+import { CalendarCheck , Star } from "lucide-react";
+import Link from "next/link";
 
 export default function Membership() {
   const plans = [
     {
-      name: "Basic",
-      price: "₹999",
-      period: "/month",
+      name: "General Package",
       description: "Perfect for getting started",
       features: [
-        "Access to all equipment",
-        "Locker facility",
-        "Basic fitness assessment",
-        "Flexible timing options",
-        "Weekend access"
+        "1 month - ₹699/-",
+        "3 month - ₹1799/-",
+        "6 month - ₹3799/-",
+        "12 month - ₹7499/-"
       ],
       popular: false
     },
     {
-      name: "Pro",
-      price: "₹1,999",
-      period: "/month",
-      description: "Most popular choice",
+      name: "Personal Training",
+      description: "For serious athletes",
       features: [
-        "Everything in Basic",
-        "Personal training (2 sessions/month)",
-        "Nutrition consultation",
-        "Priority class booking",
-        "Guest passes (2/month)"
+        "1 month - ₹2999/-",
+        "3 month - ₹4999/-",
+        "6 month - ₹7499/-",
+        "12 month - ₹13999/-"
       ],
       popular: true
     },
     {
-      name: "Elite",
-      price: "₹2,999",
-      period: "/month",
-      description: "For serious athletes",
+      name: "Cardio Male",
+      description: "Most popular choice",
       features: [
-        "Everything in Pro",
-        "Unlimited personal training",
-        "Monthly body composition analysis",
-        "Customized meal plans",
-        "24/7 trainer support"
+        "1 month - ₹1199/-",
+        "3 month - ₹2999/-",
+        "6 month - ₹5799/-",
+        "12 month - ₹10499/-"
       ],
       popular: false
-    }
+    },
+    {
+      name: "Cardio Female",
+      description: "Most popular choice",
+      features: [
+        "1 month - ₹999/-",
+        "3 month - ₹2599/-",
+        "6 month - ₹4999/-",
+        "12 month - ₹9499/-"
+      ],
+      popular: false
+    },
   ];
 
   return (
@@ -76,7 +79,7 @@ export default function Membership() {
         {/* Pricing Cards */}
         <section className="py-16">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
               {plans.map((plan, index) => (
                 <Card key={index} className={`border-2 relative ${plan.popular ? 'border-primary shadow-2xl scale-105' : ''}`}>
                   {plan.popular && (
@@ -88,28 +91,29 @@ export default function Membership() {
                     </div>
                   )}
                   <CardHeader className="text-center pb-8 pt-8">
-                    <CardTitle className="text-2xl mb-2">{plan.name}</CardTitle>
-                    <div className="mb-2">
-                      <span className="text-5xl font-bold text-primary">{plan.price}</span>
-                      <span className="text-muted-foreground">{plan.period}</span>
-                    </div>
+                    <CardTitle className="text-5xl font-bold text-primary">{plan.name}</CardTitle>
                     <p className="text-sm text-muted-foreground">{plan.description}</p>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <ul className="space-y-3">
                       {plan.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start gap-2">
-                          <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                          <CalendarCheck  className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                           <span className="text-sm">{feature}</span>
                         </li>
                       ))}
                     </ul>
-                    <Button 
+                    <Link href="/contacts">
+                    <Button
+                      asChild 
                       className={`w-full ${plan.popular ? 'bg-primary hover:bg-primary/90' : ''}`}
                       variant={plan.popular ? 'default' : 'outline'}
                     >
+                      <span>
                       Get Started
+                      </span>
                     </Button>
+                    </Link>
                   </CardContent>
                 </Card>
               ))}
@@ -157,12 +161,11 @@ export default function Membership() {
                   Start your fitness journey today with MR Real StrongMan
                 </p>
                 <div className="flex flex-wrap gap-4 justify-center">
-                  <Button size="lg" className="bg-primary hover:bg-primary/90">
-                    Sign Up Now
+                  <Link href="/contacts">
+                  <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+                    <span>Sign Up Now</span>
                   </Button>
-                  <Button size="lg" variant="outline">
-                    Contact Us
-                  </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>

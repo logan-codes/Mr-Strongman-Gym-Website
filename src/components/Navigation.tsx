@@ -43,9 +43,11 @@ export default function Navigation() {
 
           {/* Action Buttons */}
           <div className="hidden md:flex items-center gap-3">
-            <Button className="bg-primary hover:bg-primary/90">
-              Join Now
+            <Link href="/contacts">
+            <Button asChild className="bg-primary hover:bg-primary/90">
+              <span>Join Now</span>
             </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}

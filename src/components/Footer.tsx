@@ -28,7 +28,7 @@ export default function Footer() {
               Professional training, state-of-the-art equipment, and dedicated support for your fitness journey.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="hover:text-primary transition-colors">
+              <a href="https://www.instagram.com/mr_real_strongman_gym?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="hover:text-primary transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
               <a href="#" className="hover:text-primary transition-colors">
