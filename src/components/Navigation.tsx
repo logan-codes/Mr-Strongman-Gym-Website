@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Menu, X, Phone, Bell } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,8 +25,19 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex flex-col">
-            <span className="text-xl font-bold text-primary">MR Real StrongMan</span>
-            <span className="text-xs text-muted-foreground">Fitness & Unisex Gym</span>
+          <div className="flex items-center gap-2">
+            <Image
+              src="/logo/Logo.png"
+              alt="MR Real StrongMan Logo"
+              width={90}
+              height={70}
+              className="object-contain"
+            />
+            <div className="flex flex-col leading-tight">
+              <span className="text-xl font-bold text-primary">MR Real StrongMan</span>
+              <span className="text-xs text-muted-foreground">Fitness & Unisex Gym</span>
+            </div>
+          </div>
           </Link>
 
           {/* Desktop Navigation */}
