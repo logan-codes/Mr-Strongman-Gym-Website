@@ -84,12 +84,16 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-4 text-primary">Our Services</h3>
             <ul className="space-y-2 text-sm opacity-80">
-              <li>Personal Training</li>
-              <li>Group Classes</li>
-              <li>Nutrition Consulting</li>
-              <li>Strength Training</li>
-              <li>Cardio Equipment</li>
-              <li>Women's Exclusive Sessions</li>
+              <li>Weightlifting</li>
+              <li>Group Training</li>
+              <li>Weight Gain & Loss</li>
+              <li>Strength & Flexibility</li>
+              <li>Fitness</li>
+              <li>Bodybuilding</li>
+              <li>Diet Counselling</li>
+              <li>Powerlifting</li>
+              <li>Cardio</li>
+              <li>Funcitonal Training</li>
             </ul>
           </div>
 

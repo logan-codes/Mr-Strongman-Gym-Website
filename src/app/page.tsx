@@ -66,10 +66,9 @@ export default function Home() {
           {/* Mobile background image */}
           <div className="absolute inset-0 md:hidden">
             <Image
-              src="images/hero.jpeg"
+              src="images/hero.jpg"
               alt="MR Real StrongMan Gym"
               fill
-              priority
               className="object-cover"
             />
             <div className="absolute inset-0 bg-black/50" />
@@ -93,7 +92,7 @@ export default function Home() {
                   <span className="text-primary">MR Real StrongMan</span>
                 </h1>
 
-                <p className="text-lg md:text-xl text-muted-foreground md:text-muted-foreground/80 mb-8">
+                <p className="text-lg md:text-xl text-white md:text-muted-foreground/80 mb-8">
                   Premium fitness center in Mannachanallur, Trichy. Professional
                   training, state-of-the-art equipment, and dedicated support
                   for your fitness journey.
@@ -116,7 +115,7 @@ export default function Home() {
               {/* Desktop image */}
               <div className="hidden md:block">
                 <Image
-                  src="images/hero.jpeg"
+                  src="images/hero.jpg"
                   alt="MR Real StrongMan Gym"
                   width={600}
                   height={400}
