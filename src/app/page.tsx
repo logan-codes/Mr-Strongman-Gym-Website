@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Dumbbell, Users, Clock, Award, TrendingUp, Heart } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Home() {
   const features = [
@@ -61,27 +62,43 @@ export default function Home() {
 
       <main className="pt-16">
         {/* Hero Section */}
-        <section className="relative min-h-[600px] flex items-center bg-gradient-to-br from-background to-muted/30">
+        <section className="relative min-h-[600px] overflow-hidden">
+          {/* Mobile background image */}
+          <div className="absolute inset-0 md:hidden">
+            <Image
+              src="images/hero.jpeg"
+              alt="MR Real StrongMan Gym"
+              fill
+              priority
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-black/50" />
+          </div>
+
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="text-center"
+            className="relative z-10"
           >
-            <div className="container mx-auto px-4 py-20 text-left">
-              <div className="max-w-3xl">
-                <Badge className="mb-4 bg-primary text-primary-foreground ">
+            <div className="container mx-auto px-4 py-20 grid md:grid-cols-2 gap-12 items-center">
+              {/* Text content */}
+              <div className="text-white md:text-foreground max-w-3xl">
+                <Badge className="mb-4 bg-primary text-primary-foreground">
                   Transform Your Life
                 </Badge>
-                <h1 className="text-5xl md:text-7xl font-bold mb-6">
+
+                <h1 className="text-4xl md:text-7xl font-bold mb-6">
                   Build Your Strength at{" "}
                   <span className="text-primary">MR Real StrongMan</span>
                 </h1>
-                <p className="text-xl text-muted-foreground mb-8">
+
+                <p className="text-lg md:text-xl text-muted-foreground md:text-muted-foreground/80 mb-8">
                   Premium fitness center in Mannachanallur, Trichy. Professional
                   training, state-of-the-art equipment, and dedicated support
                   for your fitness journey.
                 </p>
+
                 <div className="flex flex-wrap gap-4">
                   <Button
                     size="lg"
@@ -90,10 +107,22 @@ export default function Home() {
                   >
                     <Link href="/membership">Join Now</Link>
                   </Button>
-                  <Button size="lg" variant="outline" asChild>
+                  <Button className="text-gray-500" size="lg" variant="outline" asChild>
                     <Link href="/schedule">View Schedule</Link>
                   </Button>
                 </div>
+              </div>
+
+              {/* Desktop image */}
+              <div className="hidden md:block">
+                <Image
+                  src="images/hero.jpeg"
+                  alt="MR Real StrongMan Gym"
+                  width={600}
+                  height={400}
+                  priority
+                  className="rounded-lg shadow-2xl object-cover"
+                />
               </div>
             </div>
           </motion.div>
