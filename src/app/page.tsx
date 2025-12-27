@@ -21,7 +21,7 @@ export default function Home() {
     {
       icon: Users,
       title: "Expert Trainers",
-      description: "Certified professionals with years of experience",
+      description: "Professionals with years of experience",
     },
     {
       icon: Clock,
@@ -107,7 +107,7 @@ export default function Home() {
                     <Link href="/membership">Join Now</Link>
                   </Button>
                   <Button className="text-gray-500" size="lg" variant="outline" asChild>
-                    <Link href="/schedule">View Schedule</Link>
+                    <Link href="/timings">View Schedule</Link>
                   </Button>
                 </div>
               </div>

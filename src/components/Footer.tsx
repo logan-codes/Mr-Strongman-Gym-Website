@@ -68,8 +68,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/schedule" className="text-sm hover:text-primary transition-colors opacity-80 hover:opacity-100">
-                  Schedule
+                <Link href="/timings" className="text-sm hover:text-primary transition-colors opacity-80 hover:opacity-100">
+                  Timings
                 </Link>
               </li>
               <li>
