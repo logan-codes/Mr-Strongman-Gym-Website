@@ -31,10 +31,10 @@ export default function Footer() {
               <a href="https://www.instagram.com/mr_real_strongman_gym?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="hover:text-primary transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="hover:text-primary transition-colors">
+              <a href="https://www.facebook.com/share/181NvWrvUs/" className="hover:text-primary transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="hover:text-primary transition-colors">
+              <a href="https://youtube.com/@trichystrongmanvijay8457?si=EmWnGH8W22d55GkS" className="hover:text-primary transition-colors">
                 <Youtube className="h-5 w-5" />
               </a>
               <a href="https://wa.me/918807779835" target="_blank" className="hover:text-primary transition-colors">
