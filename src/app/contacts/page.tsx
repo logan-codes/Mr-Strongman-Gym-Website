@@ -7,16 +7,17 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, MessageCircle, Clock } from "lucide-react";
+import Link from "next/link";
 
 const openWhatsApp = () => {
-    window.open(`https://wa.me/918807779835`, "_blank");
-  };
+  window.open(`https://wa.me/918807779835`, "_blank");
+};
 
 export default function Contact() {
   return (
     <>
       <Navigation />
-      
+
       <main className="pt-16 min-h-screen bg-muted/30">
         {/* Hero Section */}
         <section className="py-16 bg-background">
@@ -66,36 +67,55 @@ export default function Contact() {
                   </Button>
                 </CardContent>
               </Card> */}
-              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfbxSFtrQZKp3Q8t0cPF2Jy1ivSBCkBSGHnxlf1VZHL9l5Dmg/viewform?usp=dialog" width="100%" height="500"></iframe>
+              <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSfbxSFtrQZKp3Q8t0cPF2Jy1ivSBCkBSGHnxlf1VZHL9l5Dmg/viewform?usp=dialog"
+                width="100%"
+                height="500"
+              ></iframe>
 
               {/* Contact Information */}
               <div className="space-y-6">
                 <Card className="border-2">
                   <CardHeader>
-                    <CardTitle className="text-2xl">Contact Information</CardTitle>
+                    <CardTitle className="text-2xl">
+                      Contact Information
+                    </CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div className="flex items-start gap-3">
-                      <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                      <div>
-                        <h3 className="font-bold mb-1">Location</h3>
-                        <p className="text-sm text-muted-foreground">
-                          1/2 Renga Nagar, Edumalai Road<br />
-                          Near Bank of Baroda, Mannachanallur, Trichy
-                        </p>
-                      </div>
+                      <Link
+                        href="https://maps.app.goo.gl/rZBvKSozyqCxe6oD8"
+                        target="_blank"
+                        className="flex items-start gap-3"
+                      >
+                        <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0 " />
+                        <div>
+                          <h3 className="font-bold mb-1 hover:text-primary">Location</h3>
+                          <p className="text-sm text-muted-foreground">
+                            1/2 Renga Nagar, Edumalai Road
+                            <br />
+                            Near Bank of Baroda, Mannachanallur, Trichy
+                          </p>
+                        </div>
+                      </Link>
                     </div>
-                    
+
                     <div className="flex items-start gap-3">
-                      <Phone className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                      <div>
-                        <h3 className="font-bold mb-1">Phone</h3>
-                        <p className="text-sm text-muted-foreground">
-                          +91 8807779835
-                        </p>
-                      </div>
+                      <Link
+                        href="https://wa.me/918807779835"
+                        target="_blank"
+                        className="flex items-start gap-3"
+                      >
+                        <Phone className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                        <div>
+                          <h3 className="font-bold mb-1 hover:text-primary">Phone</h3>
+                          <p className="text-sm text-muted-foreground">
+                            +91 8807779835
+                          </p>
+                        </div>
+                      </Link>
                     </div>
-                    
+
                     <div className="flex items-start gap-3">
                       <Mail className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                       <div>
@@ -117,15 +137,23 @@ export default function Contact() {
                       <Clock className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                       <div className="flex-1">
                         <div className="flex justify-between mb-2">
-                          <span className="font-semibold">Monday to Saturday</span>
+                          <span className="font-semibold">
+                            Monday to Saturday
+                          </span>
                         </div>
                         <div className="flex justify-between mb-2">
                           <span className="font-semibold">Unisex</span>
-                          <span className="text-sm text-muted-foreground">5:00 AM - 10:00 AM <br></br> 4:30 PM - 9:30 PM</span>
+                          <span className="text-sm text-muted-foreground">
+                            5:00 AM - 10:00 AM <br></br> 4:30 PM - 9:30 PM
+                          </span>
                         </div>
                         <div className="flex justify-between mb-2">
-                          <span className="font-semibold">Ladies Exclusive</span>
-                          <span className="text-sm text-muted-foreground">10:00 AM - 4:00 PM </span>
+                          <span className="font-semibold">
+                            Ladies Exclusive
+                          </span>
+                          <span className="text-sm text-muted-foreground">
+                            10:00 AM - 4:00 PM{" "}
+                          </span>
                         </div>
                       </div>
                       <Clock className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
@@ -135,7 +163,9 @@ export default function Contact() {
                         </div>
                         <div className="flex justify-between mb-2">
                           <span className="font-semibold">Unisex</span>
-                          <span className="text-sm text-muted-foreground">6:00 AM - 10:00 AM</span>
+                          <span className="text-sm text-muted-foreground">
+                            6:00 AM - 10:00 AM
+                          </span>
                         </div>
                       </div>
                     </div>

@@ -102,16 +102,20 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-4 text-primary">Contact Info</h3>
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-2">
+                <Link href="https://maps.app.goo.gl/rZBvKSozyqCxe6oD8" target="_blank" className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
-                <span className="opacity-80">
+                <span className="opacity-80 hover:text-primary">
                   1/2 Renga Nagar, Edumalai Road<br />
                   Near Bank of Baroda,<br />
                   Mannachanallur, Trichy
                 </span>
+                </Link>
               </div>
               <div className="flex items-center gap-2">
+                <Link href="https://wa.me/918807779835" target="_blank" className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-primary flex-shrink-0" />
-                <span className="opacity-80">+91 8807779835</span>
+                <span className="opacity-80 hover:text-primary">+91 8807779835</span>
+                </Link>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-primary flex-shrink-0" />
