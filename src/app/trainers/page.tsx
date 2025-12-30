@@ -26,7 +26,7 @@ export default function Trainers() {
       experience: "1+ Years",
       certifications: ["CrossFit L2", "ACSM-CPT"],
       image:
-        "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=400&h=400&fit=crop",
+        "images/gokul.jpg",
     },
     {
       name: "P.Deepak",
