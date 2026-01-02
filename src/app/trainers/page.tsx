@@ -97,7 +97,7 @@ export default function Trainers() {
                   <Card className="overflow-hidden border-2 hover:shadow-xl transition-all">
                     <div className="relative h-64 overflow-hidden">
                       <div
-                        className="absolute inset-0 bg-cover bg-center"
+                        className="absolute inset-0 bg-cover bg-[50%_20%]"
                         style={{ backgroundImage: `url('${trainer.image}')` }}
                       />
                       <Badge className="absolute top-3 left-3 bg-primary text-primary-foreground font-bold">
