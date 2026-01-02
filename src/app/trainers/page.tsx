@@ -16,7 +16,7 @@ export default function Trainers() {
       experience: "5+ Years",
       certifications: ["NASM-CPT", "Powerlifting Coach"],
       image:
-        "https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=400&h=400&fit=crop",
+        "images/vijayakumar.jpg",
     },
     {
       name: "Gokul",
@@ -36,7 +36,7 @@ export default function Trainers() {
       experience: "2+ Years",
       certifications: ["IFBB Pro", "Nutrition Specialist"],
       image:
-        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop",
+        "images/depak.jpg",
     },
     {
       name: "V.Ajitha",
