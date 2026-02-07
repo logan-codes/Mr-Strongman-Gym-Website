@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Calendar, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import ScrollProgress from "@/components/ScrollProgress";
 
 export default function Schedule() {
   const scheduleLeft = [
@@ -33,7 +34,8 @@ export default function Schedule() {
   return (
     <>
       <Navigation />
-
+      <ScrollProgress />
+      
       <main className="pt-16 min-h-screen bg-muted/30">
         {/* Hero Section */}
         <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">

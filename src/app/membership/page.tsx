@@ -5,10 +5,11 @@ import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { CalendarCheck, Star } from "lucide-react";
+import { CalendarCheck, Scroll, Star } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import ScrollProgress from "@/components/ScrollProgress";
 
 export default function Membership() {
   const plans = [
@@ -61,6 +62,7 @@ export default function Membership() {
   return (
     <>
       <Navigation />
+      <ScrollProgress />
 
       <main className="pt-16 min-h-screen">
         {/* Hero Section */}

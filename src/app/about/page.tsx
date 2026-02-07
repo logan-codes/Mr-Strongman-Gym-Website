@@ -7,6 +7,7 @@ import { Target, Heart, TrendingUp, Users, Award, Clock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import { once } from "events";
+import ScrollProgress from "@/components/ScrollProgress";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -42,6 +43,7 @@ export default function About() {
   return (
     <>
       <Navigation />
+      <ScrollProgress />
 
       <main className="pt-16 min-h-screen">
         {/* Hero Section */}

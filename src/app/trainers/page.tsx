@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
+import ScrollProgress from "@/components/ScrollProgress";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -57,6 +58,7 @@ export default function Trainers() {
   return (
     <>
       <Navigation />
+      <ScrollProgress />
 
       <main className="pt-16 min-h-screen bg-muted/30">
         {/* Hero Section */}

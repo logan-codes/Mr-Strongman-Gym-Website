@@ -10,7 +10,7 @@ import { MapPin, Phone, Mail, MessageCircle, Clock } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import ContactForm from "@/components/ContactForm";
+import ScrollProgress from "@/components/ScrollProgress";
 
 const openWhatsApp = () => {
   window.open(`https://wa.me/918807779835`, "_blank");
@@ -20,6 +20,7 @@ export default function Contact() {
   return (
     <>
       <Navigation />
+      <ScrollProgress />
 
       <main className="pt-16 min-h-screen bg-muted/30">
         {/* Hero Section */}

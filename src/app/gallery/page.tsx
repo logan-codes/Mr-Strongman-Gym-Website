@@ -6,6 +6,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import ScrollProgress from "@/components/ScrollProgress";
 
 export default function Gallery() {
   const images = [
@@ -22,7 +23,8 @@ export default function Gallery() {
   return (
     <>
       <Navigation />
-
+      <ScrollProgress />
+      
       <main className="pt-16 min-h-screen bg-muted/30">
         {/* Hero Section */}
          <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
