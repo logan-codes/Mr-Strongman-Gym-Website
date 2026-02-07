@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export const metadata: Metadata = {
   title: "MR Real StrongMan - Fitness & Unisex Gym",
@@ -19,6 +20,7 @@ export default function RootLayout({
       <body className="antialiased">
         
         {children}
+        <FloatingWhatsApp />
       </body>
     </html>
   );

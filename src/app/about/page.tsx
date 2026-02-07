@@ -8,6 +8,9 @@ import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import { once } from "events";
 
+import Link from "next/link";
+import Image from "next/image";
+
 export default function About() {
   const values = [
     {
@@ -42,26 +45,34 @@ export default function About() {
 
       <main className="pt-16 min-h-screen">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-primary/10 to-muted/30">
-          <motion.div
-            className="container mx-auto px-4"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="container mx-auto px-4">
-              <div className="max-w-3xl mx-auto text-center">
-                <Badge className="mb-4">Our Story</Badge>
-                <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                  About MR Real StrongMan
-                </h1>
-                <p className="text-xl text-muted-foreground">
-                  Building stronger communities through fitness excellence since
-                  2019
-                </p>
-              </div>
-            </div>
-          </motion.div>
+        <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&h=800&fit=crop"
+              alt="About MR StrongMan"
+              fill
+              className="object-cover object-center"
+              priority
+            />
+            <div className="absolute inset-0 bg-black/60 z-10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10" />
+          </div>
+          
+          <div className="container mx-auto px-4 relative z-20 text-center text-white">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <Badge className="mb-6 bg-primary text-white border-0 px-4 py-1.5 text-base">Our Story</Badge>
+              <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tight">
+                About <span className="text-primary">MR Real StrongMan</span>
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-200 max-w-2xl mx-auto leading-relaxed">
+                Building stronger communities through fitness excellence since 2019
+              </p>
+            </motion.div>
+          </div>
         </section>
 
         {/* Mission Statement */}
@@ -167,11 +178,13 @@ export default function About() {
                     delay: index * 0.2,
                   }}
                 >
-                  <Card className="border-2 hover:shadow-lg transition-shadow">
-                    <CardContent className="p-6 text-center">
-                      <value.icon className="h-12 w-12 text-primary mx-auto mb-4" />
+                  <Card className="glass-card border-0 h-full hover:-translate-y-2 transition-transform duration-300">
+                    <CardContent className="p-8 text-center">
+                      <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6 text-primary">
+                        <value.icon className="h-8 w-8" />
+                      </div>
                       <h3 className="text-xl font-bold mb-3">{value.title}</h3>
-                      <p className="text-muted-foreground text-sm">
+                      <p className="text-muted-foreground">
                         {value.description}
                       </p>
                     </CardContent>

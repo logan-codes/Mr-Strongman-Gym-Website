@@ -6,6 +6,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 
+import Link from "next/link";
+import Image from "next/image";
+
 export default function Trainers() {
   const trainers = [
     {
@@ -57,24 +60,31 @@ export default function Trainers() {
 
       <main className="pt-16 min-h-screen bg-muted/30">
         {/* Hero Section */}
-        <section className="py-16 bg-background">
+        <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+           <div className="absolute inset-0 z-0">
+            <Image
+              src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1200&h=800&fit=crop"
+              alt="Our Trainers"
+              fill
+              className="object-cover object-center"
+              priority
+            />
+            <div className="absolute inset-0 bg-black/60 z-10" />
+             <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10" />
+          </div>
+          
           <motion.div
-            className="container mx-auto px-4"
-            initial={{ opacity: 0, y: 50 }}
+            className="container mx-auto px-4 relative z-20 text-center text-white"
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="container mx-auto px-4">
-              <div className="max-w-3xl mx-auto text-center">
-                <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                  Meet Our Expert Trainers
-                </h1>
-                <p className="text-lg text-muted-foreground">
-                  Certified professionals dedicated to helping you achieve your
-                  fitness goals
-                </p>
-              </div>
-            </div>
+            <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tight">
+              Meet Our <span className="text-primary">Expert Trainers</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-200 max-w-2xl mx-auto">
+              Certified professionals dedicated to helping you achieve your fitness goals
+            </p>
           </motion.div>
         </section>
 
@@ -94,7 +104,7 @@ export default function Trainers() {
                     delay: index * 0.2,
                   }}
                 >
-                  <Card className="overflow-hidden border-2 hover:shadow-xl transition-all">
+                  <Card className="glass-card border-0 overflow-hidden hover:-translate-y-2 transition-all duration-300 h-full">
                     <div className="relative h-64 overflow-hidden">
                       <div
                         className="absolute inset-0 bg-cover bg-[50%_20%]"

@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { CalendarCheck, Star } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Membership() {
   const plans = [
@@ -63,23 +64,32 @@ export default function Membership() {
 
       <main className="pt-16 min-h-screen">
         {/* Hero Section */}
-        <section className="py-16 bg-gradient-to-br from-primary/10 to-muted/30">
+        <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+           <div className="absolute inset-0 z-0">
+            <Image
+              src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=1200&h=800&fit=crop"
+              alt="Membership Plans"
+              fill
+              className="object-cover object-center"
+              priority
+            />
+            <div className="absolute inset-0 bg-black/60 z-10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10" />
+          </div>
+          
           <motion.div
-            className="container mx-auto px-4"
-            initial={{ opacity: 0, y: 50 }}
+            className="container mx-auto px-4 relative z-20 text-center text-white"
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="max-w-3xl mx-auto text-center">
-              <Badge className="mb-4">Membership Plans</Badge>
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                Choose Your Perfect Plan
-              </h1>
-              <p className="text-lg text-muted-foreground">
-                Flexible membership options designed to fit your fitness goals
-                and budget
-              </p>
-            </div>
+            <Badge className="mb-6 bg-primary text-white border-0 px-4 py-1.5 text-base">Membership Plans</Badge>
+            <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tight">
+              Choose Your <span className="text-primary">Perfect Plan</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-200 max-w-2xl mx-auto">
+              Flexible membership options designed to fit your fitness goals and budget
+            </p>
           </motion.div>
         </section>
 
@@ -100,7 +110,7 @@ export default function Membership() {
                   }}
                 >
                   <Card
-                    className={`border-2 relative ${plan.popular ? "border-primary shadow-2xl scale-105" : ""}`}
+                    className={`glass-card border-0 relative h-full hover:scale-105 transition-transform duration-300 ${plan.popular ? "shadow-2xl border-primary/20 bg-white/80" : ""}`}
                   >
                     {plan.popular && (
                       <div className="absolute -top-4 left-1/2 -translate-x-1/2">
@@ -182,18 +192,18 @@ export default function Membership() {
         {/* CTA Section */}
         <section className="py-16">
           <div className="container mx-auto px-4">
-            <Card className="max-w-3xl mx-auto border-2 bg-gradient-to-br from-primary/5 to-background">
-              <CardContent className="p-8 text-center">
-                <h2 className="text-3xl font-bold mb-4">Ready to Join?</h2>
-                <p className="text-lg text-muted-foreground mb-6">
+            <Card className="glass-card border-0 max-w-3xl mx-auto bg-gradient-to-br from-primary/10 to-white/50">
+              <CardContent className="p-12 text-center">
+                <h2 className="text-4xl font-black mb-6">Ready to Join?</h2>
+                <p className="text-xl text-muted-foreground mb-8">
                   Start your fitness journey today with MR Real StrongMan
                 </p>
                 <div className="flex flex-wrap gap-4 justify-center">
                   <Link href="/contacts">
                     <Button
                       asChild
-                      size="lg"
-                      className="bg-primary hover:bg-primary/90"
+                      size="xl"
+                      className="bg-primary hover:bg-primary/90 text-lg px-8 py-6 h-auto"
                     >
                       <span>Sign Up Now</span>
                     </Button>

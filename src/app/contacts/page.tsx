@@ -8,6 +8,9 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, MessageCircle, Clock } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import ContactForm from "@/components/ContactForm";
 
 const openWhatsApp = () => {
   window.open(`https://wa.me/918807779835`, "_blank");
@@ -20,17 +23,32 @@ export default function Contact() {
 
       <main className="pt-16 min-h-screen bg-muted/30">
         {/* Hero Section */}
-        <section className="py-16 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                Get in Touch
-              </h1>
-              <p className="text-lg text-muted-foreground">
-                We'd love to hear from you. Send us a message!
-              </p>
-            </div>
+        <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+           <div className="absolute inset-0 z-0">
+            <Image
+              src="https://images.unsplash.com/photo-1596357395217-80de13130e92?w=1200&h=800&fit=crop"
+              alt="Contact Us"
+              fill
+              className="object-cover object-center"
+              priority
+            />
+            <div className="absolute inset-0 bg-black/60 z-10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10" />
           </div>
+          
+          <motion.div
+            className="container mx-auto px-4 relative z-20 text-center text-white"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tight">
+              Get in <span className="text-primary">Touch</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-200 max-w-2xl mx-auto">
+              We'd love to hear from you. Send us a message!
+            </p>
+          </motion.div>
         </section>
 
         {/* Contact Content */}
@@ -38,44 +56,11 @@ export default function Contact() {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
               {/* Contact Form */}
-              {/* <Card className="border-2">
-                <CardHeader>
-                  <CardTitle className="text-2xl">Send us a Message</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div>
-                    <label className="block text-sm font-semibold mb-2">Full Name</label>
-                    <Input placeholder="Enter your full name" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold mb-2">Email</label>
-                    <Input type="email" placeholder="Enter your email" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold mb-2">Phone Number</label>
-                    <Input type="tel" placeholder="Enter your phone number" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold mb-2">Message</label>
-                    <Textarea 
-                      placeholder="Tell us about your fitness goals..."
-                      rows={5}
-                    />
-                  </div>
-                  <Button className="w-full bg-primary hover:bg-primary/90">
-                    Send Message
-                  </Button>
-                </CardContent>
-              </Card> */}
-              <iframe
-                src="https://docs.google.com/forms/d/e/1FAIpQLSfbxSFtrQZKp3Q8t0cPF2Jy1ivSBCkBSGHnxlf1VZHL9l5Dmg/viewform?usp=dialog"
-                width="100%"
-                height="500"
-              ></iframe>
+              <ContactForm />
 
               {/* Contact Information */}
               <div className="space-y-6">
-                <Card className="border-2">
+                <Card className="glass-card border-0">
                   <CardHeader>
                     <CardTitle className="text-2xl">
                       Contact Information
@@ -128,7 +113,7 @@ export default function Contact() {
                   </CardContent>
                 </Card>
 
-                <Card className="border-2">
+                <Card className="glass-card border-0">
                   <CardHeader>
                     <CardTitle className="text-2xl">Operating Hours</CardTitle>
                   </CardHeader>

@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Gallery() {
   const images = [
@@ -24,18 +25,33 @@ export default function Gallery() {
 
       <main className="pt-16 min-h-screen bg-muted/30">
         {/* Hero Section */}
-        <section className="py-16 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <Badge className="mb-4">Our Gallery</Badge>
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                See Our Gym in Action
-              </h1>
-              <p className="text-lg text-muted-foreground">
-                Take a virtual tour of our facilities, equipment, and community
-              </p>
-            </div>
+         <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+           <div className="absolute inset-0 z-0">
+            <Image
+              src="https://images.unsplash.com/photo-1596357395217-80de13130e92?w=1200&h=800&fit=crop"
+              alt="Our Gallery"
+              fill
+              className="object-cover object-center"
+              priority
+            />
+            <div className="absolute inset-0 bg-black/60 z-10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10" />
           </div>
+          
+          <motion.div
+            className="container mx-auto px-4 relative z-20 text-center text-white"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+             <Badge className="mb-6 bg-primary text-white border-0 px-4 py-1.5 text-base">Gallery</Badge>
+            <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tight">
+              See Our Gym in <span className="text-primary">Action</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-200 max-w-2xl mx-auto">
+              Take a virtual tour of our facilities, equipment, and community
+            </p>
+          </motion.div>
         </section>
 
         {/* Gallery Sections */}
@@ -55,7 +71,7 @@ export default function Gallery() {
                       delay: imgIndex * 0.2,
                     }}
                   >
-                    <Card className="overflow-hidden border-2 hover:shadow-xl transition-shadow group cursor-pointer">
+                    <Card className="glass-card border-0 overflow-hidden hover:-translate-y-2 transition-all duration-300 group cursor-pointer h-full">
                       <div className="relative h-64 overflow-hidden">
                         <div
                           className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"

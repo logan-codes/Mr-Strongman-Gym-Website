@@ -1,167 +1,136 @@
 import Link from "next/link";
-import { MapPin, Phone, Mail, MessageCircle, Instagram, Facebook, Youtube, Clock,  } from "lucide-react";
+import { Facebook, Instagram, Twitter, MapPin, Phone, Mail, Clock, Youtube, MessageCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function Footer() {
-  return (
-    <footer className="bg-secondary text-secondary-foreground">
-      {/* Women's Exclusive Banner */}
-      <div className="bg-primary/10 border-t border-primary/20 py-4">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <h3 className="text-primary font-bold text-lg mb-2">Women's Exclusive Training Sessions</h3>
-            <p className="text-sm text-muted-foreground">
-              Dedicated women's hours with female trainer V.Ajitha | Monday-Saturday 10:00 AM - 4:00 PM
-            </p>
-          </div>
-        </div>
-      </div>
+  const currentYear = new Date().getFullYear();
 
-      {/* Main Footer Content */}
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Brand Info */}
-          <div>
-            <h2 className="text-2xl font-bold text-primary mb-4">MR Real StrongMan</h2>
-            <p className="text-sm mb-4 opacity-90">Fitness & Unisex Gym</p>
-            <p className="text-sm mb-6 opacity-80">
-              Transform your body and build your strength at our premium fitness center. 
-              Professional training, state-of-the-art equipment, and dedicated support for your fitness journey.
+  return (
+    <footer className="relative bg-black text-white pt-20 pb-10 overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-white/10 to-transparent" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          {/* Brand Column */}
+          <div className="space-y-6">
+            <Link href="/" className="inline-block">
+              <h2 className="text-3xl font-black tracking-tighter">
+                MR <span className="text-primary">REAL STRONGMAN</span>
+              </h2>
+            </Link>
+            <p className="text-gray-400 leading-relaxed">
+              Premium fitness center dedicated to helping you achieve your strongest self. 
+              Join our community and transform your life today.
             </p>
             <div className="flex gap-4">
-              <a href="https://www.instagram.com/mr_real_strongman_gym?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="hover:text-primary transition-colors">
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a href="https://www.facebook.com/share/181NvWrvUs/" className="hover:text-primary transition-colors">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="https://youtube.com/@trichystrongmanvijay8457?si=EmWnGH8W22d55GkS" className="hover:text-primary transition-colors">
-                <Youtube className="h-5 w-5" />
-              </a>
-              <a href="https://wa.me/918807779835" target="_blank" className="hover:text-primary transition-colors">
-                <MessageCircle className="h-5 w-5" />
-              </a>
+              <SocialLink href="https://www.instagram.com/mr_real_strongman_gym?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" icon={<Instagram className="w-5 h-5" />} label="Instagram" />
+              <SocialLink href="https://www.facebook.com/share/181NvWrvUs/" icon={<Facebook className="w-5 h-5" />} label="Facebook" />
+              <SocialLink href="https://youtube.com/@trichystrongmanvijay8457?si=EmWnGH8W22d55GkS" icon={<Youtube className="w-5 h-5" />} label="Youtube" />
+               <SocialLink href="https://wa.me/918807779835" icon={<MessageCircle className="w-5 h-5" />} label="WhatsApp" />
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-bold mb-4 text-primary">Quick Links</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/" className="text-sm hover:text-primary transition-colors opacity-80 hover:opacity-100">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-sm hover:text-primary transition-colors opacity-80 hover:opacity-100">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="/trainers" className="text-sm hover:text-primary transition-colors opacity-80 hover:opacity-100">
-                  Trainers
-                </Link>
-              </li>
-              <li>
-                <Link href="/membership" className="text-sm hover:text-primary transition-colors opacity-80 hover:opacity-100">
-                  Membership
-                </Link>
-              </li>
-              <li>
-                <Link href="/timings" className="text-sm hover:text-primary transition-colors opacity-80 hover:opacity-100">
-                  Timings
-                </Link>
-              </li>
-              <li>
-                <Link href="/contacts" className="text-sm hover:text-primary transition-colors opacity-80 hover:opacity-100">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Our Services */}
-          <div>
-            <h3 className="text-lg font-bold mb-4 text-primary">Our Services</h3>
-            <ul className="space-y-2 text-sm opacity-80">
-              <li>Weightlifting</li>
-              <li>Group Training</li>
-              <li>Weight Gain & Loss</li>
-              <li>Strength & Flexibility</li>
-              <li>Fitness</li>
-              <li>Bodybuilding</li>
-              <li>Diet Counselling</li>
-              <li>Powerlifting</li>
-              <li>Cardio</li>
-              <li>Funcitonal Training</li>
+            <h3 className="text-lg font-bold mb-6 text-white border-l-4 border-primary pl-3">Quick Links</h3>
+            <ul className="space-y-3">
+              <FooterLink href="/">Home</FooterLink>
+              <FooterLink href="/about">About Us</FooterLink>
+              <FooterLink href="/trainers">Our Trainers</FooterLink>
+              <FooterLink href="/membership">Membership Plans</FooterLink>
+              <FooterLink href="/timings">Class Schedule</FooterLink>
+              <FooterLink href="/contacts">Contact Us</FooterLink>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-bold mb-4 text-primary">Contact Info</h3>
-            <div className="space-y-3 text-sm">
-              <div className="flex items-start gap-2">
-                <Link href="https://maps.app.goo.gl/rZBvKSozyqCxe6oD8" target="_blank" className="flex items-start gap-2">
-                <MapPin className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
-                <span className="opacity-80 hover:text-primary">
+            <h3 className="text-lg font-bold mb-6 text-white border-l-4 border-primary pl-3">Contact Us</h3>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3 text-gray-400">
+                <MapPin className="w-5 h-5 text-primary shrink-0 mt-1" />
+                <span>
                   1/2 Renga Nagar, Edumalai Road<br />
                   Near Bank of Baroda,<br />
                   Mannachanallur, Trichy
                 </span>
-                </Link>
-              </div>
-              <div className="flex items-center gap-2">
-                <Link href="https://wa.me/918807779835" target="_blank" className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-primary flex-shrink-0" />
-                <span className="opacity-80 hover:text-primary">+91 8807779835</span>
-                </Link>
-              </div>
-              <div className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-primary flex-shrink-0" />
-                <span className="opacity-80">nvijayakumar110@gmail.com</span>
-              </div>
-            </div>
+              </li>
+              <li className="flex items-center gap-3 text-gray-400">
+                <Phone className="w-5 h-5 text-primary shrink-0" />
+                <span>+91 88077 79835</span>
+              </li>
+              <li className="flex items-center gap-3 text-gray-400">
+                <Mail className="w-5 h-5 text-primary shrink-0" />
+                <span>nvijayakumar110@gmail.com</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Opening Hours */}
+          <div>
+            <h3 className="text-lg font-bold mb-6 text-white border-l-4 border-primary pl-3">Opening Hours</h3>
+            <ul className="space-y-4">
+              <li className="bg-white/5 rounded-lg p-4 border border-white/5">
+                <div className="flex items-center gap-2 mb-2 text-white font-medium">
+                  <Clock className="w-4 h-4 text-primary" />
+                  <span>Mon - Sat (Unisex)</span>
+                </div>
+                <div className="text-gray-400 text-sm pl-6">
+                  Morning: 5:00 AM - 10:00 AM <br />
+                  Evening: 4:30 PM - 9:30 PM
+                </div>
+              </li>
+              <li className="bg-white/5 rounded-lg p-4 border border-white/5">
+                <div className="flex items-center gap-2 mb-2 text-white font-medium">
+                  <Clock className="w-4 h-4 text-primary" />
+                  <span>Women's Exclusive</span>
+                </div>
+                <div className="text-gray-400 text-sm pl-6">
+                  10:00 AM - 4:00 PM (Mon-Sat)
+                </div>
+              </li>
+              <li className="text-gray-500 text-sm italic">
+                * Sunday: 6:00 PM - 10:00 AM (Unisex)
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
 
-      {/* Operating Hours Section */}
-      <div className="border-t border-border/20 py-6">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <Clock className="h-5 w-5 text-primary" />
-            <h3 className="text-lg font-bold text-primary">Operating Hours</h3>
+        {/* Bottom Bar */}
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+          <p>© {currentYear} Mr Real StrongMan Gym. All rights reserved.</p>
+          <div className="flex gap-6">
+            <Link href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center text-sm">
-            <div>
-              <p className="font-semibold mb-1">Monday - Saturday</p>
-              <p className="opacity-80">Morning (Unisex): 5:00 AM - 10:00 AM</p>
-            </div>
-            <div>
-              <p className="font-semibold mb-1">Monday - Saturday</p>
-              <p className="opacity-80">Women's Exclusive: 10:00 AM - 4:00 PM</p>
-            </div>
-            <div>
-              <p className="font-semibold mb-1">Monday - Sunday</p>
-              <p className="opacity-80">Evening (Unisex): 4:30 PM - 9:30 PM</p>
-            </div>
-            <div className="md:col-span-3">
-              <p className="font-semibold mb-1">Sunday (Unisex)</p>
-              <p className="opacity-80"> 6:00 PM - 10:00 AM</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Copyright */}
-      <div className="border-t border-border/20 py-4">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-sm opacity-80">
-            © 2019 MR Real StrongMan Fitness And Unisex Gym. All rights reserved.
-          </p>
         </div>
       </div>
     </footer>
   );
 }
+
+const SocialLink = ({ href, icon, label }: { href: string; icon: React.ReactNode; label: string }) => (
+  <a 
+    href={href} 
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label={label}
+    className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-white hover:bg-primary hover:text-black transition-all duration-300 hover:scale-110"
+  >
+    {icon}
+  </a>
+);
+
+const FooterLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
+  <li>
+    <Link 
+      href={href} 
+      className="text-gray-400 hover:text-primary transition-colors flex items-center gap-2 group"
+    >
+      <span className="w-1 h-1 rounded-full bg-primary/50 group-hover:w-2 transition-all" />
+      {children}
+    </Link>
+  </li>
+);
