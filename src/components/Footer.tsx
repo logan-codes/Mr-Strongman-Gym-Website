@@ -105,8 +105,14 @@ export default function Footer() {
                   10:00 AM - 4:00 PM (Mon-Sat)
                 </div>
               </li>
-              <li className="text-gray-500 text-sm italic">
-                * Sunday: 6:00 PM - 10:00 AM (Unisex)
+              <li className="bg-white/5 rounded-lg p-4 border border-white/5">
+                <div className="flex items-center gap-2 mb-2 text-white font-medium">
+                  <Clock className="w-4 h-4 text-primary" />
+                  <span>Sun (Unisex)</span>
+                </div>
+                <div className="text-gray-400 text-sm pl-6">
+                  Morning: 6:00 AM - 10:00 AM 
+                </div>
               </li>
             </ul>
           </div>

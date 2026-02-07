@@ -11,6 +11,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import ScrollProgress from "@/components/ScrollProgress";
+import ContactForm from "@/components/ContactForm";
 
 const openWhatsApp = () => {
   window.open(`https://wa.me/918807779835`, "_blank");
@@ -57,12 +58,7 @@ export default function Contact() {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
               {/* Contact Form */}
-              <iframe
-                src="https://docs.google.com/forms/d/e/1FAIpQLSfbxSFtrQZKp3Q8t0cPF2Jy1ivSBCkBSGHnxlf1VZHL9l5Dmg/viewform?usp=dialog"
-                width="100%"
-                height="500"
-              ></iframe>
-
+              <ContactForm />
               {/* Contact Information */}
               <div className="space-y-6">
                 <Card className="glass-card border-0">
