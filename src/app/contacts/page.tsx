@@ -56,7 +56,11 @@ export default function Contact() {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
               {/* Contact Form */}
-              <ContactForm />
+              <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSfbxSFtrQZKp3Q8t0cPF2Jy1ivSBCkBSGHnxlf1VZHL9l5Dmg/viewform?usp=dialog"
+                width="100%"
+                height="500"
+              ></iframe>
 
               {/* Contact Information */}
               <div className="space-y-6">

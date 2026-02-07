@@ -122,7 +122,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-background z-10" />
             <div className="absolute inset-0 bg-linear-to-r from-black/60 to-transparent z-10" />
             <Image
-              src="/images/hero.jpg"
+              src={`url('images/hero.jpg')`}
               alt="MR Real StrongMan Gym"
               fill
               priority

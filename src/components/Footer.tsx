@@ -50,16 +50,30 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-6 text-white border-l-4 border-primary pl-3">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-gray-400">
-                <MapPin className="w-5 h-5 text-primary shrink-0 mt-1" />
-                <span>
-                  1/2 Renga Nagar, Edumalai Road<br />
-                  Near Bank of Baroda,<br />
-                  Mannachanallur, Trichy
-                </span>
+                <Link 
+                  href="https://maps.app.goo.gl/rZBvKSozyqCxe6oD8" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex items-start gap-3"
+                >
+                  <MapPin className="w-5 h-5 text-primary shrink-0 mt-1" />
+                  <span>
+                    1/2 Renga Nagar, Edumalai Road<br />
+                    Near Bank of Baroda,<br />
+                    Mannachanallur, Trichy
+                  </span>
+                </Link>
               </li>
               <li className="flex items-center gap-3 text-gray-400">
-                <Phone className="w-5 h-5 text-primary shrink-0" />
-                <span>+91 88077 79835</span>
+                <Link 
+                  href="https://wa.me/918807779835" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex items-center gap-3"
+                >
+                  <Phone className="w-5 h-5 text-primary shrink-0" />
+                  <span>+91 88077 79835</span>
+                </Link>
               </li>
               <li className="flex items-center gap-3 text-gray-400">
                 <Mail className="w-5 h-5 text-primary shrink-0" />
