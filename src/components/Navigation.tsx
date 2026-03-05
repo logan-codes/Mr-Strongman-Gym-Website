@@ -16,7 +16,8 @@ export default function Navigation() {
     { href: "/membership", label: "Membership" },
     { href: "/timings", label: "Timings" },
     { href: "/gallery", label: "Gallery" },
-    { href: "/contacts", label: "Contact" }
+    { href: "/bmi", label: "BMI Calculator" },
+    { href: "/contacts", label: "Contact" },
   ];
 
   return (
@@ -40,8 +41,8 @@ export default function Navigation() {
           </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6">
+          {/* Desktop Navigation (large screens) */}
+          <div className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -53,8 +54,8 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* Action Buttons */}
-          <div className="hidden md:flex items-center gap-3">
+          {/* Action Buttons (large screens) */}
+          <div className="hidden lg:flex items-center gap-3">
             <Link href="/contacts">
             <Button asChild className="bg-primary hover:bg-primary/90">
               <span>Join Now</span>
@@ -62,18 +63,18 @@ export default function Navigation() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile / Medium Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2"
+            className="lg:hidden p-2"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile / Medium Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t">
+          <div className="lg:hidden py-4 border-t">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <Link
