@@ -9,6 +9,7 @@ import IdealWeightCalculator from "@/components/calculators/IdealWeightCalculato
 import ProteinIntakeCalculator from "@/components/calculators/ProteinIntakeCalculator";
 import { useState } from "react";
 import { Activity, Heart, Zap, Target, Dumbbell } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 type CalculatorType = "bmi" | "bodyfat" | "calories" | "idealweight" | "protein";
 
@@ -84,19 +85,20 @@ export default function CalculatorPageClient() {
               {calculators.map((calculator) => {
                 const Icon = calculator.icon;
                 return (
-                  <button
+                  <Button
                     key={calculator.id}
                     onClick={() => setActiveCalculator(calculator.id)}
-                    className={`flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-medium transition-all ${
+                    variant={activeCalculator === calculator.id ? "default" : "ghost"}
+                    className={`flex items-center gap-2 px-4 py-3 text-sm font-medium transition-all ${
                       activeCalculator === calculator.id
-                        ? "bg-primary text-primary-foreground shadow-lg scale-105"
-                        : "bg-muted text-muted-foreground hover:bg-accent hover:text-foreground"
+                        ? "shadow-lg scale-105"
+                        : "hover:bg-accent hover:text-foreground"
                     }`}
                   >
                     <Icon className="h-4 w-4" />
                     <span className="hidden sm:inline">{calculator.name}</span>
                     <span className="sm:hidden">{calculator.name.split(' ')[0]}</span>
-                  </button>
+                  </Button>
                 );
               })}
             </div>
@@ -151,12 +153,12 @@ export default function CalculatorPageClient() {
                 can create personalized plans tailored to your specific needs and goals.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90">
+                <Button size="lg" className="bg-primary hover:bg-primary/90">
                   Book a Consultation
-                </button>
-                <button className="inline-flex items-center justify-center rounded-md border border-input bg-background px-6 py-3 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground">
+                </Button>
+                <Button variant="outline" size="lg">
                   View Membership Plans
-                </button>
+                </Button>
               </div>
             </div>
           </div>

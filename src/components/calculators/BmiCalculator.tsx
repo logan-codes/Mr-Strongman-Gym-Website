@@ -11,6 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import { Heart, Activity } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 type Unit = "metric" | "imperial";
 
@@ -65,28 +66,32 @@ export default function BmiCalculator({ className }: BmiCalculatorProps) {
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="flex gap-2 rounded-lg bg-muted p-1 text-xs font-medium">
-            <button
+            <Button
               type="button"
               onClick={() => setUnit("metric")}
-              className={`flex-1 rounded-md px-3 py-2 transition ${
+              variant={unit === "metric" ? "default" : "ghost"}
+              size="sm"
+              className={`flex-1 ${
                 unit === "metric"
-                  ? "bg-background text-foreground shadow-sm"
+                  ? "shadow-sm"
                   : "text-muted-foreground"
               }`}
             >
               Metric (cm, kg)
-            </button>
-            <button
+            </Button>
+            <Button
               type="button"
               onClick={() => setUnit("imperial")}
-              className={`flex-1 rounded-md px-3 py-2 transition ${
+              variant={unit === "imperial" ? "default" : "ghost"}
+              size="sm"
+              className={`flex-1 ${
                 unit === "imperial"
-                  ? "bg-background text-foreground shadow-sm"
+                  ? "shadow-sm"
                   : "text-muted-foreground"
               }`}
             >
               Imperial (in, lbs)
-            </button>
+            </Button>
           </div>
 
           <form

@@ -304,16 +304,19 @@ export default function HomePageClient() {
 
               <div className="flex justify-center mt-2 gap-3">
                 {testimonials.map((_, i) => (
-                  <button
+                  <Button
                     key={i}
                     onClick={() => setIndex(i)}
+                    variant="ghost"
+                    size="sm"
                     className={`h-1.5 rounded-full transition-all duration-300 ${
                       i === index
                         ? "w-8 bg-primary"
-                        : "w-1.5 bg-white/20 hover:bg-white/40"
+                        : "w-1.5 bg-muted-foreground/30 hover:bg-muted-foreground/50"
                     }`}
-                    aria-label={`Go to testimonial ${i + 1}`}
-                  />
+                  >
+                    <span className="sr-only">Go to testimonial {i + 1}</span>
+                  </Button>
                 ))}
               </div>
             </div>

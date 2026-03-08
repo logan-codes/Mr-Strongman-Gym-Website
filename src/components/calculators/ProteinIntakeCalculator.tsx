@@ -11,6 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import { Heart, Activity, Dumbbell } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 type Unit = "metric" | "imperial";
 type ActivityLevel = "sedentary" | "light" | "moderate" | "active" | "athlete";
@@ -118,28 +119,32 @@ export default function ProteinIntakeCalculator({ className }: ProteinIntakeCalc
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="flex gap-2 rounded-lg bg-muted p-1 text-xs font-medium">
-            <button
+            <Button
               type="button"
               onClick={() => setUnit("metric")}
-              className={`flex-1 rounded-md px-3 py-2 transition ${
+              variant={unit === "metric" ? "default" : "ghost"}
+              size="sm"
+              className={`flex-1 ${
                 unit === "metric"
-                  ? "bg-background text-foreground shadow-sm"
+                  ? "shadow-sm"
                   : "text-muted-foreground"
               }`}
             >
               Metric (kg)
-            </button>
-            <button
+            </Button>
+            <Button
               type="button"
               onClick={() => setUnit("imperial")}
-              className={`flex-1 rounded-md px-3 py-2 transition ${
+              variant={unit === "imperial" ? "default" : "ghost"}
+              size="sm"
+              className={`flex-1 ${
                 unit === "imperial"
-                  ? "bg-background text-foreground shadow-sm"
+                  ? "shadow-sm"
                   : "text-muted-foreground"
               }`}
             >
               Imperial (lbs)
-            </button>
+            </Button>
           </div>
 
           <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
@@ -170,21 +175,24 @@ export default function ProteinIntakeCalculator({ className }: ProteinIntakeCalc
                 { value: "active", label: "Active", description: "Hard exercise 6-7 days/week" },
                 { value: "athlete", label: "Athlete", description: "Very intense training or endurance sports" }
               ].map((level) => (
-                <button
+                <Button
                   key={level.value}
                   type="button"
                   onClick={() => setActivityLevel(level.value as ActivityLevel)}
-                  className={`w-full text-left rounded-md px-3 py-2 text-sm transition ${
+                  variant={activityLevel === level.value ? "default" : "ghost"}
+                  className={`w-full text-left justify-start ${
                     activityLevel === level.value
-                      ? "bg-background text-foreground shadow-sm border border-primary/20"
+                      ? "shadow-sm border border-primary/20"
                       : "text-muted-foreground hover:bg-background/50"
                   }`}
                 >
-                  <div className="font-medium">{level.label}</div>
-                  <div className="text-xs text-muted-foreground">
-                    {level.description}
+                  <div className="text-left">
+                    <div className="font-medium">{level.label}</div>
+                    <div className="text-xs text-muted-foreground">
+                      {level.description}
+                    </div>
                   </div>
-                </button>
+                </Button>
               ))}
             </div>
           </div>

@@ -64,12 +64,14 @@ export default function Navigation() {
           </div>
 
           {/* Mobile / Medium Menu Button */}
-          <button
+          <Button
+            variant="ghost"
+            size="icon"
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2"
+            className="lg:hidden"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          </Button>
         </div>
 
         {/* Mobile / Medium Navigation */}
@@ -86,7 +88,7 @@ export default function Navigation() {
                   {link.label}
                 </Link>
               ))}
-              <Button className="bg-primary hover:bg-primary/90 w-full">
+              <Button className="bg-primary hover:bg-primary/90 w-full" onClick={() => window.location.href = '/contacts'}>
                 Join Now
               </Button>
             </div>

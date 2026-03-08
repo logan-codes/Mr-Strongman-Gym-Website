@@ -11,6 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import { Heart, Activity, Target } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 type Gender = "male" | "female";
 type Unit = "metric" | "imperial";
@@ -143,53 +144,61 @@ export default function IdealWeightCalculator({ className }: IdealWeightCalculat
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="flex gap-2 rounded-lg bg-muted p-1 text-xs font-medium">
-            <button
+            <Button
               type="button"
               onClick={() => setUnit("metric")}
-              className={`flex-1 rounded-md px-3 py-2 transition ${
+              variant={unit === "metric" ? "default" : "ghost"}
+              size="sm"
+              className={`flex-1 ${
                 unit === "metric"
-                  ? "bg-background text-foreground shadow-sm"
+                  ? "shadow-sm"
                   : "text-muted-foreground"
               }`}
             >
               Metric (cm)
-            </button>
-            <button
+            </Button>
+            <Button
               type="button"
               onClick={() => setUnit("imperial")}
-              className={`flex-1 rounded-md px-3 py-2 transition ${
+              variant={unit === "imperial" ? "default" : "ghost"}
+              size="sm"
+              className={`flex-1 ${
                 unit === "imperial"
-                  ? "bg-background text-foreground shadow-sm"
+                  ? "shadow-sm"
                   : "text-muted-foreground"
               }`}
             >
               Imperial (in)
-            </button>
+            </Button>
           </div>
 
           <div className="flex gap-2 rounded-lg bg-muted p-1 text-xs font-medium">
-            <button
+            <Button
               type="button"
               onClick={() => setGender("male")}
-              className={`flex-1 rounded-md px-3 py-2 transition ${
+              variant={gender === "male" ? "default" : "ghost"}
+              size="sm"
+              className={`flex-1 ${
                 gender === "male"
-                  ? "bg-background text-foreground shadow-sm"
+                  ? "shadow-sm"
                   : "text-muted-foreground"
               }`}
             >
               Male
-            </button>
-            <button
+            </Button>
+            <Button
               type="button"
               onClick={() => setGender("female")}
-              className={`flex-1 rounded-md px-3 py-2 transition ${
+              variant={gender === "female" ? "default" : "ghost"}
+              size="sm"
+              className={`flex-1 ${
                 gender === "female"
-                  ? "bg-background text-foreground shadow-sm"
+                  ? "shadow-sm"
                   : "text-muted-foreground"
               }`}
             >
               Female
-            </button>
+            </Button>
           </div>
 
           <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
@@ -218,21 +227,24 @@ export default function IdealWeightCalculator({ className }: IdealWeightCalculat
                 { value: "medium", label: "Medium Frame", description: "Wrist circumference 6.5-7.5\" (men) or 6-6.5\" (women)" },
                 { value: "large", label: "Large Frame", description: "Wrist circumference > 7.5\" (men) or > 6.5\" (women)" }
               ].map((frame) => (
-                <button
+                <Button
                   key={frame.value}
                   type="button"
                   onClick={() => setFrameSize(frame.value as FrameSize)}
-                  className={`w-full text-left rounded-md px-3 py-2 text-sm transition ${
+                  variant={frameSize === frame.value ? "default" : "ghost"}
+                  className={`w-full text-left justify-start ${
                     frameSize === frame.value
-                      ? "bg-background text-foreground shadow-sm border border-primary/20"
+                      ? "shadow-sm border border-primary/20"
                       : "text-muted-foreground hover:bg-background/50"
                   }`}
                 >
-                  <div className="font-medium">{frame.label}</div>
-                  <div className="text-xs text-muted-foreground">
-                    {frame.description}
+                  <div className="text-left">
+                    <div className="font-medium">{frame.label}</div>
+                    <div className="text-xs text-muted-foreground">
+                      {frame.description}
+                    </div>
                   </div>
-                </button>
+                </Button>
               ))}
             </div>
           </div>

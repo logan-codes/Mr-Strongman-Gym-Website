@@ -11,6 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import { Heart, Activity, Zap } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 type Gender = "male" | "female";
 type Unit = "metric" | "imperial";
@@ -96,53 +97,61 @@ export default function CalorieNeedsCalculator({ className }: CalorieNeedsCalcul
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="flex gap-2 rounded-lg bg-muted p-1 text-xs font-medium">
-            <button
+            <Button
               type="button"
               onClick={() => setUnit("metric")}
-              className={`flex-1 rounded-md px-3 py-2 transition ${
+              variant={unit === "metric" ? "default" : "ghost"}
+              size="sm"
+              className={`flex-1 ${
                 unit === "metric"
-                  ? "bg-background text-foreground shadow-sm"
+                  ? "shadow-sm"
                   : "text-muted-foreground"
               }`}
             >
               Metric (cm, kg)
-            </button>
-            <button
+            </Button>
+            <Button
               type="button"
               onClick={() => setUnit("imperial")}
-              className={`flex-1 rounded-md px-3 py-2 transition ${
+              variant={unit === "imperial" ? "default" : "ghost"}
+              size="sm"
+              className={`flex-1 ${
                 unit === "imperial"
-                  ? "bg-background text-foreground shadow-sm"
+                  ? "shadow-sm"
                   : "text-muted-foreground"
               }`}
             >
               Imperial (in, lbs)
-            </button>
+            </Button>
           </div>
 
           <div className="flex gap-2 rounded-lg bg-muted p-1 text-xs font-medium">
-            <button
+            <Button
               type="button"
               onClick={() => setGender("male")}
-              className={`flex-1 rounded-md px-3 py-2 transition ${
+              variant={gender === "male" ? "default" : "ghost"}
+              size="sm"
+              className={`flex-1 ${
                 gender === "male"
-                  ? "bg-background text-foreground shadow-sm"
+                  ? "shadow-sm"
                   : "text-muted-foreground"
               }`}
             >
               Male
-            </button>
-            <button
+            </Button>
+            <Button
               type="button"
               onClick={() => setGender("female")}
-              className={`flex-1 rounded-md px-3 py-2 transition ${
+              variant={gender === "female" ? "default" : "ghost"}
+              size="sm"
+              className={`flex-1 ${
                 gender === "female"
-                  ? "bg-background text-foreground shadow-sm"
+                  ? "shadow-sm"
                   : "text-muted-foreground"
               }`}
             >
               Female
-            </button>
+            </Button>
           </div>
 
           <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
@@ -203,21 +212,24 @@ export default function CalorieNeedsCalculator({ className }: CalorieNeedsCalcul
                 { value: "active", label: "Active" },
                 { value: "very-active", label: "Very Active" }
               ].map((level) => (
-                <button
+                <Button
                   key={level.value}
                   type="button"
                   onClick={() => setActivityLevel(level.value as ActivityLevel)}
-                  className={`w-full text-left rounded-md px-3 py-2 text-sm transition ${
+                  variant={activityLevel === level.value ? "default" : "ghost"}
+                  className={`w-full text-left justify-start ${
                     activityLevel === level.value
-                      ? "bg-background text-foreground shadow-sm border border-primary/20"
+                      ? "shadow-sm border border-primary/20"
                       : "text-muted-foreground hover:bg-background/50"
                   }`}
                 >
-                  <div className="font-medium">{level.label}</div>
-                  <div className="text-xs text-muted-foreground">
-                    {getActivityDescription(level.value as ActivityLevel)}
+                  <div className="text-left">
+                    <div className="font-medium">{level.label}</div>
+                    <div className="text-xs text-muted-foreground">
+                      {getActivityDescription(level.value as ActivityLevel)}
+                    </div>
                   </div>
-                </button>
+                </Button>
               ))}
             </div>
           </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import AiChatbot from "@/components/AiChatbot";
 
 export const metadata: Metadata = {
   title: "MR Real StrongMan - Fitness & Unisex Gym",
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body className="antialiased">
         {children}
         <FloatingWhatsApp />
+        <AiChatbot />
       </body>
     </html>
   );
