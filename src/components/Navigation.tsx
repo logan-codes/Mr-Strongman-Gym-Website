@@ -16,7 +16,7 @@ export default function Navigation() {
     { href: "/membership", label: "Membership" },
     { href: "/timings", label: "Timings" },
     { href: "/gallery", label: "Gallery" },
-    { href: "/bmi", label: "BMI Calculator" },
+    { href: "/calculators", label: "Calculators" },
     { href: "/contacts", label: "Contact" },
   ];
 
