@@ -7,11 +7,17 @@ import BodyFatCalculator from "@/components/calculators/BodyFatCalculator";
 import CalorieNeedsCalculator from "@/components/calculators/CalorieNeedsCalculator";
 import IdealWeightCalculator from "@/components/calculators/IdealWeightCalculator";
 import ProteinIntakeCalculator from "@/components/calculators/ProteinIntakeCalculator";
+import Link from "next/link";
 import { useState } from "react";
 import { Activity, Heart, Zap, Target, Dumbbell } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-type CalculatorType = "bmi" | "bodyfat" | "calories" | "idealweight" | "protein";
+type CalculatorType =
+  | "bmi"
+  | "bodyfat"
+  | "calories"
+  | "idealweight"
+  | "protein";
 
 const calculators = [
   {
@@ -19,42 +25,45 @@ const calculators = [
     name: "BMI Calculator",
     description: "Calculate your Body Mass Index",
     icon: Activity,
-    component: BmiCalculator
+    component: BmiCalculator,
   },
   {
     id: "bodyfat" as CalculatorType,
     name: "Body Fat Calculator",
     description: "Estimate your body fat percentage",
     icon: Heart,
-    component: BodyFatCalculator
+    component: BodyFatCalculator,
   },
   {
     id: "calories" as CalculatorType,
     name: "Calorie Needs",
     description: "Calculate daily caloric requirements",
     icon: Zap,
-    component: CalorieNeedsCalculator
+    component: CalorieNeedsCalculator,
   },
   {
     id: "idealweight" as CalculatorType,
     name: "Ideal Weight",
     description: "Find your healthy weight range",
     icon: Target,
-    component: IdealWeightCalculator
+    component: IdealWeightCalculator,
   },
   {
     id: "protein" as CalculatorType,
     name: "Protein Intake",
     description: "Calculate daily protein needs",
     icon: Dumbbell,
-    component: ProteinIntakeCalculator
-  }
+    component: ProteinIntakeCalculator,
+  },
 ];
 
 export default function CalculatorPageClient() {
-  const [activeCalculator, setActiveCalculator] = useState<CalculatorType>("bmi");
+  const [activeCalculator, setActiveCalculator] =
+    useState<CalculatorType>("bmi");
 
-  const currentCalculator = calculators.find(calc => calc.id === activeCalculator);
+  const currentCalculator = calculators.find(
+    (calc) => calc.id === activeCalculator,
+  );
   const CurrentCalculatorComponent = currentCalculator?.component;
 
   return (
@@ -74,8 +83,9 @@ export default function CalculatorPageClient() {
               </span>
             </h1>
             <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
-              Use our comprehensive health calculators to monitor your fitness journey. 
-              From BMI to protein intake, get personalized insights to help you reach your goals.
+              Use our comprehensive health calculators to monitor your fitness
+              journey. From BMI to protein intake, get personalized insights to
+              help you reach your goals.
             </p>
           </div>
 
@@ -88,7 +98,9 @@ export default function CalculatorPageClient() {
                   <Button
                     key={calculator.id}
                     onClick={() => setActiveCalculator(calculator.id)}
-                    variant={activeCalculator === calculator.id ? "default" : "ghost"}
+                    variant={
+                      activeCalculator === calculator.id ? "default" : "ghost"
+                    }
                     className={`flex items-center gap-2 px-4 py-3 text-sm font-medium transition-all ${
                       activeCalculator === calculator.id
                         ? "shadow-lg scale-105"
@@ -97,7 +109,9 @@ export default function CalculatorPageClient() {
                   >
                     <Icon className="h-4 w-4" />
                     <span className="hidden sm:inline">{calculator.name}</span>
-                    <span className="sm:hidden">{calculator.name.split(' ')[0]}</span>
+                    <span className="sm:hidden">
+                      {calculator.name.split(" ")[0]}
+                    </span>
                   </Button>
                 );
               })}
@@ -106,8 +120,12 @@ export default function CalculatorPageClient() {
 
           {/* Calculator Description */}
           <div className="mb-8 text-center">
-            <h2 className="text-2xl font-semibold mb-2">{currentCalculator?.name}</h2>
-            <p className="text-muted-foreground">{currentCalculator?.description}</p>
+            <h2 className="text-2xl font-semibold mb-2">
+              {currentCalculator?.name}
+            </h2>
+            <p className="text-muted-foreground">
+              {currentCalculator?.description}
+            </p>
           </div>
 
           {/* Active Calculator */}
@@ -121,7 +139,8 @@ export default function CalculatorPageClient() {
               </div>
               <h3 className="font-semibold mb-2">Scientifically Backed</h3>
               <p className="text-sm text-muted-foreground">
-                All calculators use established medical formulas and research-based methods.
+                All calculators use established medical formulas and
+                research-based methods.
               </p>
             </div>
             <div className="rounded-lg bg-muted/50 p-6 text-center">
@@ -130,7 +149,8 @@ export default function CalculatorPageClient() {
               </div>
               <h3 className="font-semibold mb-2">Personalized Results</h3>
               <p className="text-sm text-muted-foreground">
-                Get customized recommendations based on your personal metrics and goals.
+                Get customized recommendations based on your personal metrics
+                and goals.
               </p>
             </div>
             <div className="rounded-lg bg-muted/50 p-6 text-center">
@@ -139,7 +159,8 @@ export default function CalculatorPageClient() {
               </div>
               <h3 className="font-semibold mb-2">Goal Oriented</h3>
               <p className="text-sm text-muted-foreground">
-                Whether you want to lose weight, build muscle, or maintain health, we've got you covered.
+                Whether you want to lose weight, build muscle, or maintain
+                health, we've got you covered.
               </p>
             </div>
           </div>
@@ -147,18 +168,25 @@ export default function CalculatorPageClient() {
           {/* Call to Action */}
           <div className="mt-12 text-center">
             <div className="rounded-lg bg-primary/5 border border-primary/20 p-8">
-              <h3 className="text-xl font-semibold mb-3">Need Professional Guidance?</h3>
+              <h3 className="text-xl font-semibold mb-3">
+                Need Professional Guidance?
+              </h3>
               <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                While these calculators provide helpful estimates, our certified trainers and nutritionists 
-                can create personalized plans tailored to your specific needs and goals.
+                While these calculators provide helpful estimates, our certified
+                trainers and nutritionists can create personalized plans
+                tailored to your specific needs and goals.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-primary hover:bg-primary/90">
-                  Book a Consultation
-                </Button>
-                <Button variant="outline" size="lg">
-                  View Membership Plans
-                </Button>
+                <Link href="\contacts">
+                  <Button size="lg" className="bg-primary hover:bg-primary/90">
+                    Book a Consultation
+                  </Button>
+                </Link>
+                <Link href="\membership">
+                  <Button variant="outline" size="lg">
+                    View Membership Plans
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
