@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, Send, X, Bot, Loader2 } from "lucide-react";
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import Groq from "groq-sdk";
 
 interface Message {
   id: string;
@@ -34,13 +34,13 @@ export default function AiChatbot() {
     }
   }, [isOpen]);
 
-  const initializeGemini = () => {
-    const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
+  const initializeGroq = () => {
+    const apiKey = process.env.NEXT_PUBLIC_GROQ_API_KEY;
     if (!apiKey) {
-      console.error("Gemini API key not found");
+      console.error("Groq API key not found");
       return null;
     }
-    return new GoogleGenerativeAI(apiKey);
+    return new Groq({ apiKey, dangerouslyAllowBrowser: true });
   };
 
   const getTrainerPersonaPrompt = () => {
@@ -65,24 +65,37 @@ Current context: You are helping someone who visited MR Real StrongMan Gym websi
   };
 
   const generateAiResponse = async (userMessage: string) => {
-    const genAI = initializeGemini();
-    if (!genAI) {
+    const groq = initializeGroq();
+    if (!groq) {
       return "I apologize, but I'm having trouble connecting to my AI services right now. Please try again later or contact our gym directly for assistance.";
     }
 
     try {
-      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
       const prompt = `${getTrainerPersonaPrompt()}
 
 User message: "${userMessage}"
 
 Please respond as Strongman AI with helpful fitness advice.`;
 
-      const result = await model.generateContent(prompt);
-      const response = await result.response;
-      return response.text();
+      const response = await groq.chat.completions.create({
+        model: "llama-3.1-8b-instant",
+        messages: [
+          {
+            role: "system",
+            content: getTrainerPersonaPrompt()
+          },
+          {
+            role: "user",
+            content: userMessage
+          }
+        ],
+        temperature: 0.7,
+        max_tokens: 1024
+      });
+
+      return response.choices[0]?.message?.content || "I'm having trouble generating a response right now. Please try again.";
     } catch (error) {
-      console.error("Gemini API error:", error);
+      console.error("Groq API error:", error);
       return "I'm experiencing some technical difficulties right now. Please try again in a moment or reach out to our gym staff directly. We're here to help you achieve your fitness goals!";
     }
   };
