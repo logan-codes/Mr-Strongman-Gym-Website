@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Expert Trainers | MR Real StrongMan Gym",
-  description: "Meet our certified fitness trainers including V.Ajitha for women's exclusive sessions. Professional guidance for all fitness levels.",
+  title: "Our Expert Trainers",
+  description: "Work with certified fitness professionals at MR Real StrongMan Gym. Featuring expert guidance for bodybuilding, weight loss, and women-exclusive training.",
 };
 
 export default function TrainersLayout({

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Membership Plans | MR Real StrongMan Gym",
-  description: "Flexible gym membership plans starting from ₹699/month. Personal training, cardio packages, and women's exclusive options available.",
+  title: "Membership Plans",
+  description: "Choose a membership plan that fits your goals. Affordable fitness packages, personal training, and group sessions at Mannachanallur's best gym.",
 };
 
 export default function MembershipLayout({

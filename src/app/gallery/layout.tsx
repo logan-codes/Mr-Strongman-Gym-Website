@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Gallery | MR Real StrongMan Gym",
-  description: "Take a virtual tour of MR Real StrongMan Gym's premium equipment, training areas, and facilities in Mannachanallur, Trichy.",
+  title: "Gym Gallery",
+  description: "View our state-of-the-art gym equipment, spacious workout areas, and training facilities at MR Real StrongMan Gym, Mannachanallur.",
 };
 
 export default function GalleryLayout({

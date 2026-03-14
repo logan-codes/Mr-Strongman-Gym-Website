@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us | MR Real StrongMan Gym",
-  description: "Learn about MR Real StrongMan Gym's mission, values, and 5+ years of transforming lives in Trichy through fitness excellence.",
+  title: "About Us",
+  description: "Discover the story of MR Real StrongMan Gym. With over 5 years of experience in Mannachanallur, Trichy, we are committed to providing premium fitness services for everyone.",
 };
 
 export default function AboutLayout({

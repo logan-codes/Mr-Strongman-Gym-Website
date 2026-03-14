@@ -138,7 +138,7 @@ export default function HomePageClient() {
             <div className="absolute inset-0 bg-linear-to-r from-black/60 to-transparent z-10" />
             <Image
               src="images/hero.jpg"
-              alt="MR Real StrongMan Gym"
+              alt="MR Real StrongMan Gym Hero - Best Fitness Center in Mannachanallur, Trichy"
               fill
               priority
               className="object-cover object-center scale-110"
@@ -368,7 +368,7 @@ export default function HomePageClient() {
                 <div className="relative glass-card rounded-2xl p-2 border-white/5 rotate-3 hover:rotate-0 transition-transform duration-500">
                   <Image
                     src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80"
-                    alt="Women's Training"
+                    alt="Women's Exclusive Fitness Training at MR Real StrongMan Gym Mannachanallur"
                     width={600}
                     height={400}
                     className="rounded-xl object-cover h-[400px] w-full"

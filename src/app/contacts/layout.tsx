@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us | MR Real StrongMan Gym",
-  description: "Get in touch with MR Real StrongMan Gym. Located in Mannachanallur, Trichy. Call +91 88077 79835 or visit us for a free trial.",
+  title: "Contact Us",
+  description: "Visit MR Real StrongMan Gym in Mannachanallur, Trichy. Contact us at +91 88077 79835 for membership enquiries, personal training, or to book a free trial session.",
 };
 
 export default function ContactsLayout({
