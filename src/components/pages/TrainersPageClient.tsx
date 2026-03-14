@@ -16,7 +16,9 @@ export default function TrainersPageClient() {
       description:
         "Former competitive powerlifter specializing in strength development and form correction.",
       experience: "5+ Years",
-      certifications: [],
+      certifications: ["UWSFF - World Silver Medalist (Benchpress , Deadlift, Squat)",
+"WRPF - Asian Silver Medalist ",
+"6 Times India Gold Medalist "],
       image: "images/vijayakumar.jpg",
     },
     {
@@ -34,7 +36,8 @@ export default function TrainersPageClient() {
       description:
         "Professional bodybuilder with expertise in muscle building and dietary planning.",
       experience: "2+ Years",
-      certifications: [],
+      certifications: ["National Silver Medalist (Deadlift ) ",
+"Tamilnadu Strongman"],
       image: "images/depak.jpg",
     },
     {
@@ -43,7 +46,9 @@ export default function TrainersPageClient() {
       description:
         "Dedicated female trainer for women's exclusive sessions, specializing in strength training and wellness.",
       experience: "2+ Years",
-      certifications: [],
+      certifications: ["National Gold Medalist (Benchpress)",
+"National Silver Medalist (Deadlift)",
+"Tamilnadu Strong Women"],
       image:
         "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop",
       isWomensExclusive: true,
@@ -108,7 +113,7 @@ export default function TrainersPageClient() {
                         className="absolute inset-0 bg-cover bg-[50%_20%]"
                         style={{ backgroundImage: `url('${trainer.image}')` }}
                       />
-                      <Badge className="absolute top-3 left-3 bg-primary text-primary-foreground font-bold">
+                      <Badge className=" absolute top-3 left-3 bg-primary text-primary-foreground font-bold ">
                         {trainer.experience}
                       </Badge>
                     </div>
@@ -133,7 +138,7 @@ export default function TrainersPageClient() {
                             <Badge
                               key={idx}
                               variant="secondary"
-                              className="text-xs"
+                              className="text-xs whitespace-normal bg-black text-yellow-400"
                             >
                               {cert}
                             </Badge>
