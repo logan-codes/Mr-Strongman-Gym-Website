@@ -16,7 +16,7 @@ export default function TrainersPageClient() {
       description:
         "Former competitive powerlifter specializing in strength development and form correction.",
       experience: "5+ Years",
-      certifications: ["NASM-CPT", "Powerlifting Coach"],
+      certifications: [],
       image: "images/vijayakumar.jpg",
     },
     {
@@ -25,7 +25,7 @@ export default function TrainersPageClient() {
       description:
         "Expert in functional movement patterns and athletic performance enhancement.",
       experience: "1+ Years",
-      certifications: ["CrossFit L2", "ACSM-CPT"],
+      certifications: [],
       image: "images/gokul.jpg",
     },
     {
@@ -34,7 +34,7 @@ export default function TrainersPageClient() {
       description:
         "Professional bodybuilder with expertise in muscle building and dietary planning.",
       experience: "2+ Years",
-      certifications: ["IFBB Pro", "Nutrition Specialist"],
+      certifications: [],
       image: "images/depak.jpg",
     },
     {
@@ -43,7 +43,7 @@ export default function TrainersPageClient() {
       description:
         "Dedicated female trainer for women's exclusive sessions, specializing in strength training and wellness.",
       experience: "2+ Years",
-      certifications: ["NASM-CPT", "Women's Health Specialist"],
+      certifications: [],
       image:
         "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop",
       isWomensExclusive: true,
