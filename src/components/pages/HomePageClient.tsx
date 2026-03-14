@@ -85,6 +85,31 @@ export default function HomePageClient() {
       role: "Member • 5 Months",
       text: "Good approach for trainers.. satisfied training...thank u so much for ur response....",
     },
+    {
+      name: "Saranya RS",
+      role: "Member • 1 Year",
+      text: "Great place fore workout. Trainers are really supportive and approchable. equipments are well maintained. Group classes are really helpful. Highly recommeded. If fitness is your goal, then this is your place",
+    },
+    {
+      name: "Joshika 2108",
+      role: "Member • 9 Months",
+      text: "Hi.. I'm joshi. This gym is prefectly worth. My trainer ajitha is really awesome. She is guiding me softly and taking care of me. Thank you",
+    },
+    {
+      name: "Anbu Nathan",
+      role: "Member • 5 Months",
+      text: "Best gym and trainer's",
+    },
+    {
+      name: "Ramesh Raja",
+      role: "Member • 1 Year",
+      text: "it our gym, the positive energy is palpable from the moment you walk in. The supportive community and enthusiastic trainers create an environment that keeps you motivated and eager to push your limits.",
+    },
+    {
+      name: "Ravi Akash",
+      role: "Member • 1 year",
+      text: "It was quite good and nice gym with better workplace... Trainers were very friendly neighborhood trainers...",
+    },
   ];
 
   useEffect(() => {
