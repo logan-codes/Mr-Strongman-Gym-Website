@@ -51,29 +51,39 @@ export default function HomePageClient() {
 
   const testimonials = [
     {
-      name: "Rahul Mehta",
-      role: "Member • 1 Year",
-      text: "The quality of equipment here is outstanding. From cardio machines to free weights, everything feels premium and well-maintained.",
+      name: "Vijay Ragavan",
+      role: "Member • 5 months",
+      text: "Good training and favorite gym very caring coaches",
     },
     {
-      name: "Sneha Kapoor",
-      role: "Member • 8 Months",
-      text: "The trainers are extremely professional and supportive. They helped me stay consistent and reach my fitness goals faster than I expected.",
+      name: "Hari Haran D",
+      role: "Member • 2 weeks",
+      text: "Good gym, the PTs are good and training us very well.",
     },
     {
-      name: "Aman Verma",
+      name: "Pradeepa Pravin",
+      role: "Member • 5 Months",
+      text: "Best gym in Manachanallur💪. Coaching is good",
+    },
+    {
+      name: "SIMPLY-SMART",
+      role: "Member • 1 Years",
+      text: "Well trained trainers other that highgenic place maintained by the management..Well good atmosphere for peaceful workout..✨",
+    },
+    {
+      name: "Vinoth",
       role: "Member • 6 Months",
-      text: "I love the friendly atmosphere here. Everyone is motivating and there’s zero judgment, which makes workouts enjoyable every day.",
+      text: "Nice atmosphere for peaceful workout, trainer are very kindly especially trainer deepak had good knowledge about fitness and nice equipment Thankyou💓",
     },
     {
-      name: "Pooja Nair",
-      role: "Member • 1.5 Years",
-      text: "This gym feels like a second home. Great trainers, great people, and top-notch equipment — couldn’t ask for more.",
+      name: "Kishore Uppalapati",
+      role: "Member • 4 Months",
+      text: "Gym equipements are good and trainer are also very supportive and friendly to everyone.💪",
     },
     {
-      name: "Kunal Singh",
-      role: "Member • 10 Months",
-      text: "Clean facilities, modern machines, and a very positive vibe. It’s the perfect place for beginners and serious athletes alike.",
+      name: "TR Ranjith",
+      role: "Member • 5 Months",
+      text: "Good approach for trainers.. satisfied training...thank u so much for ur response....",
     },
   ];
 
